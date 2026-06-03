@@ -1,0 +1,1750 @@
+/* ================================================================
+   LA FOGATTA RESTAURANTE — styles.css
+   Sistema visual Carbon/Dorado/Brasa · Turbaco, Bolivar
+   Mobile-first estricto · WCAG AA · Sin frameworks CSS
+   ================================================================ */
+
+/* ================================================================
+   0. RESET Y BASE
+   ================================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ================================================================
+   1. TOKENS CSS — BLOQUE :root COMPLETO (DESIGN.md §15)
+   ================================================================ */
+:root {
+  /* === COLORES BASE === */
+  --color-negro:   #0D0D0D;
+  --color-carbon:  #1A1A1A;
+  --color-dorado:  #D4A017;
+  --color-ambar:   #E8850A;
+  --color-crema:   #F2EDE0;
+
+  /* === FAMILIA NEGRO/CARBON === */
+  --color-negro-950: #050505;
+  --color-negro-900: #0D0D0D;
+  --color-negro-800: #141414;
+  --color-negro-700: #1A1A1A;
+  --color-negro-600: #232323;
+  --color-negro-500: #2E2E2E;
+  --color-negro-400: #3D3D3D;
+  --color-negro-300: #555555;
+  --color-negro-200: #777777;
+  --color-negro-100: #9E9E9E;
+  --color-negro-50:  #C4C4C4;
+
+  /* === FAMILIA DORADO === */
+  --color-dorado-900: #3D2900;
+  --color-dorado-800: #6B4800;
+  --color-dorado-700: #9B6800;
+  --color-dorado-600: #C48A0A;
+  --color-dorado-500: #D4A017;
+  --color-dorado-400: #DDB53A;
+  --color-dorado-300: #E6C96A;
+  --color-dorado-200: #EFDC9F;
+  --color-dorado-100: #F7EDD0;
+  --color-dorado-50:  #FBF5E8;
+
+  /* === FAMILIA AMBAR === */
+  --color-ambar-900: #3D1C00;
+  --color-ambar-800: #6B3200;
+  --color-ambar-700: #A84E00;
+  --color-ambar-600: #C86800;
+  --color-ambar-500: #E8850A;
+  --color-ambar-400: #EE9B35;
+  --color-ambar-300: #F3B568;
+  --color-ambar-200: #F8CE9C;
+  --color-ambar-100: #FBE4C8;
+  --color-ambar-50:  #FDF2E4;
+
+  /* === FAMILIA CREMA === */
+  --color-crema-950: #1A1208;
+  --color-crema-900: #2E2010;
+  --color-crema-800: #4A3420;
+  --color-crema-700: #6B5030;
+  --color-crema-600: #8A6A45;
+  --color-crema-500: #AB8C68;
+  --color-crema-400: #C9AA8A;
+  --color-crema-300: #E0CCB0;
+  --color-crema-200: #EDE4D2;
+  --color-crema-100: #F2EDE0;
+  --color-crema-50:  #F8F4EC;
+
+  /* === COLORES FUNCIONALES === */
+  --color-whatsapp:           #25D366;
+  --color-whatsapp-dark:      #1DA851;
+  --color-success:            #2D8A5F;
+  --color-error:              #C84B4B;
+  --color-overlay-negro:      rgba(13, 13, 13, 0.60);
+  --color-overlay-negro-deep: rgba(13, 13, 13, 0.75);
+  --color-overlay-ambar:      rgba(232, 133, 10, 0.15);
+  --color-ember-glow:         rgba(212, 160, 23, 0.30);
+  --color-ember-glow-hot:     rgba(232, 133, 10, 0.35);
+  --color-ember-glow-soft:    rgba(212, 160, 23, 0.15);
+  --color-dorado-line:        rgba(212, 160, 23, 0.35);
+  --color-ambar-line:         rgba(232, 133, 10, 0.30);
+  --color-shadow-dark:        rgba(5, 5, 5, 0.70);
+  --color-shadow-medium:      rgba(5, 5, 5, 0.45);
+  --color-shadow-light:       rgba(5, 5, 5, 0.20);
+  --color-shadow-gold:        rgba(212, 160, 23, 0.25);
+
+  /* === TIPOGRAFIA === */
+  --font-display: 'Oswald', Impact, sans-serif;
+  --font-acento:  'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --text-display-xl: clamp(3.5rem, 9vw + 0.5rem, 8rem);
+  --text-display-lg: clamp(2.5rem, 5vw + 0.75rem, 5rem);
+  --text-display-md: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+  --text-display-sm: clamp(1.25rem, 2vw + 0.25rem, 1.875rem);
+  --text-acento-xl:  clamp(1.75rem, 3.5vw + 0.5rem, 3.25rem);
+  --text-acento-lg:  clamp(1.375rem, 2.5vw + 0.25rem, 2.25rem);
+  --text-acento-md:  clamp(1.125rem, 1.5vw + 0.125rem, 1.625rem);
+  --text-body-xl:    1.25rem;
+  --text-body-lg:    1.125rem;
+  --text-body-md:    1rem;
+  --text-body-sm:    0.9rem;
+  --text-body-xs:    0.8rem;
+  --text-ui-nav:     0.875rem;
+  --text-ui-btn:     0.9375rem;
+  --text-ui-label:   0.75rem;
+  --text-ui-price:   1.125rem;
+  --text-ui-badge:   0.6875rem;
+
+  --lh-tight:   1.05;
+  --lh-snug:    1.20;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.65;
+
+  --ls-tightest: -0.04em;
+  --ls-tight:    -0.02em;
+  --ls-snug:     -0.01em;
+  --ls-normal:   0;
+  --ls-wide:     0.06em;
+  --ls-wider:    0.12em;
+  --ls-widest:   0.18em;
+  --ls-oswald:   0.08em;
+
+  /* === ESPACIADO === */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --section-py: clamp(4.5rem, 9vw, 8rem);
+  --section-px: clamp(1.25rem, 5vw, 3.5rem);
+
+  /* === CONTENEDORES === */
+  --container-max:    1200px;
+  --container-wide:   1440px;
+  --container-narrow: 720px;
+
+  /* === RADIOS === */
+  --radius-sm:   3px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* === SOMBRAS === */
+  --shadow-sm:         0 1px 4px var(--color-shadow-light);
+  --shadow-md:         0 4px 16px var(--color-shadow-medium), 0 2px 6px var(--color-shadow-light);
+  --shadow-lg:         0 12px 36px var(--color-shadow-dark), 0 4px 10px var(--color-shadow-medium);
+  --shadow-xl:         0 24px 60px var(--color-shadow-dark);
+  --shadow-ember:      0 0 20px var(--color-ember-glow), 0 0 40px var(--color-ember-glow-soft);
+  --shadow-ember-hot:  0 0 30px var(--color-ember-glow-hot), 0 8px 24px var(--color-shadow-dark);
+  --shadow-gold-card:  0 4px 24px var(--color-shadow-gold), 0 2px 8px var(--color-shadow-light);
+  --shadow-gold-hover: 0 8px 40px var(--color-ember-glow), 0 0 60px var(--color-ember-glow-soft), 0 4px 16px var(--color-shadow-dark);
+  --shadow-card:       0 2px 16px var(--color-shadow-medium), 0 1px 4px var(--color-shadow-light);
+  --shadow-card-hover: 0 8px 32px var(--color-shadow-dark), 0 2px 8px var(--color-shadow-medium);
+
+  /* === TRANSICIONES === */
+  --transition-fast:   150ms ease;
+  --transition-base:   280ms ease;
+  --transition-slow:   480ms ease;
+  --transition-reveal: 640ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  --transition-glow:   320ms ease-out;
+
+  /* === BORDE BRASA === */
+  --ember-glow-sm:    4px;
+  --ember-glow-md:    8px;
+  --ember-glow-lg:    16px;
+  --ember-glow-xl:    32px;
+  --ember-thickness:  1px;
+
+  /* === DIVISORES === */
+  --divider-dorado: 1px solid var(--color-dorado-line);
+  --divider-carbon: 1px solid var(--color-negro-500);
+
+  /* === HEADER === */
+  --header-height: 72px;
+
+  /* === NOISE/GRAIN === */
+  --noise-opacity: 0.03;
+}
+
+/* ================================================================
+   2. ESTILOS BASE
+   ================================================================ */
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  line-height: var(--lh-normal);
+  color: var(--color-crema);
+  background-color: var(--color-negro);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Focus visible global WCAG AA */
+:focus-visible {
+  outline: 2px solid var(--color-dorado);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ================================================================
+   3. SCROLL REVEAL
+   ================================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity var(--transition-reveal),
+    transform var(--transition-reveal);
+  transition-delay: calc(var(--reveal-index, 0) * 80ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Momentos: entrada lateral */
+.momento--dia.reveal {
+  transform: translateX(-24px);
+}
+
+.momento--noche.reveal {
+  transform: translateX(24px);
+}
+
+.momento--dia.reveal.is-visible,
+.momento--noche.reveal.is-visible {
+  transform: none;
+}
+
+/* ================================================================
+   4. BORDE BRASA (DESIGN.md §7)
+   ================================================================ */
+
+/* Variante hover/activo */
+.ember-border {
+  position: relative;
+}
+
+.ember-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: var(--ember-thickness) solid var(--color-dorado-500);
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    0 0 var(--ember-glow-md) var(--color-ember-glow),
+    inset 0 0 var(--ember-glow-md) var(--color-ember-glow-soft);
+  opacity: 0;
+  transition: opacity var(--transition-glow);
+}
+
+.ember-border:hover::after,
+.ember-border.is-active::after {
+  opacity: 1;
+}
+
+/* Variante siempre visible */
+.ember-border--always {
+  position: relative;
+}
+
+.ember-border--always::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: var(--ember-thickness) solid var(--color-dorado-500);
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    0 0 var(--ember-glow-md) var(--color-ember-glow),
+    inset 0 0 var(--ember-glow-md) var(--color-ember-glow-soft);
+  opacity: 0.6;
+  transition: opacity var(--transition-glow), box-shadow var(--transition-glow);
+}
+
+.ember-border--always:hover::after {
+  opacity: 1;
+  box-shadow:
+    0 0 var(--ember-glow-lg) var(--color-ember-glow),
+    0 0 var(--ember-glow-xl) var(--color-ember-glow-soft),
+    inset 0 0 12px var(--color-ember-glow-soft);
+}
+
+/* Linea brasa inferior (tabs activos, nav activo) */
+.ember-line {
+  position: relative;
+}
+
+.ember-line::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-dorado-500) 30%,
+    var(--color-ambar-500) 60%,
+    transparent 100%
+  );
+  box-shadow: 0 0 var(--ember-glow-md) var(--color-ember-glow);
+  border-radius: 2px;
+}
+
+/* ================================================================
+   5. BOTONES
+   ================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-ui-btn);
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-full);
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    box-shadow var(--transition-glow),
+    transform var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Boton primario: dorado sobre negro */
+.btn--primary {
+  background: var(--color-dorado);
+  color: var(--color-negro);
+  font-weight: 600;
+}
+
+.btn--primary:hover {
+  background: var(--color-ambar);
+  box-shadow: var(--shadow-ember);
+}
+
+/* Glow brasa en CTA principal */
+.btn--brasa {
+  position: relative;
+  overflow: visible;
+}
+
+.btn--brasa::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--color-dorado-500) 0%, var(--color-ambar-500) 100%);
+  opacity: 0;
+  filter: blur(8px);
+  z-index: -1;
+  transition: opacity var(--transition-glow);
+}
+
+.btn--brasa:hover::before {
+  opacity: 0.5;
+}
+
+/* Boton ghost: borde dorado transparente */
+.btn--ghost {
+  background: transparent;
+  color: var(--color-crema);
+  border: 1px solid rgba(212, 160, 23, 0.5);
+}
+
+.btn--ghost:hover {
+  background: rgba(212, 160, 23, 0.1);
+  border-color: var(--color-dorado);
+}
+
+/* Boton full-width para movil */
+.btn--full {
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+/* Boton header WhatsApp (tamano compacto) */
+.btn--header-wa {
+  background: var(--color-dorado);
+  color: var(--color-negro);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  gap: var(--space-2);
+  display: none; /* oculto en movil */
+}
+
+.btn--header-wa:hover {
+  background: var(--color-ambar);
+  box-shadow: var(--shadow-ember);
+}
+
+/* Boton ubicacion */
+.btn--ubicacion {
+  margin-top: var(--space-8);
+  align-self: flex-start;
+}
+
+/* ================================================================
+   6. SEPARADORES DE SECCION CON FUNDIDO (DESIGN.md §8)
+   ================================================================ */
+.section-fade-top,
+.section-fade-bottom {
+  position: relative;
+}
+
+.section-fade-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(80px, 12vw, 160px);
+  background: linear-gradient(to bottom, var(--color-negro) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.section-fade-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(80px, 12vw, 160px);
+  background: linear-gradient(to top, var(--color-negro) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ================================================================
+   7. LAYOUT UTILITARIO
+   ================================================================ */
+.section__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--section-py) var(--section-px);
+}
+
+.section__heading {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.section__eyebrow {
+  font-family: var(--font-acento);
+  font-style: italic;
+  font-size: var(--text-acento-md);
+  color: rgba(212, 160, 23, 0.8);
+  letter-spacing: var(--ls-wide);
+  margin-bottom: var(--space-3);
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-display-lg);
+  color: var(--color-dorado);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-tight);
+}
+
+.section__title--crema {
+  color: var(--color-crema);
+}
+
+/* ================================================================
+   8. HEADER (DESIGN.md §9.1)
+   ================================================================ */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-height);
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    backdrop-filter var(--transition-base);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 var(--section-px);
+  max-width: var(--container-wide);
+  margin: 0 auto;
+}
+
+/* Estado por defecto: transparente */
+#header {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* Estado scrolled */
+#header.header--scrolled {
+  background: rgba(13, 13, 13, 0.92);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--color-dorado-line);
+}
+
+/* Logo */
+.header__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.header__logo-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--color-dorado);
+  letter-spacing: var(--ls-oswald);
+  text-transform: uppercase;
+}
+
+.header__logo-sub {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.6rem;
+  color: rgba(242, 237, 224, 0.6);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Nav desktop */
+.header__nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.header__nav-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-ui-nav);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: rgba(242, 237, 224, 0.7);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transition-base);
+}
+
+.header__nav-link:hover {
+  color: var(--color-crema);
+}
+
+.header__nav-link.is-active {
+  color: var(--color-dorado);
+}
+
+/* Linea brasa bajo nav activo */
+.header__nav-link.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-dorado-500) 30%,
+    var(--color-ambar-500) 60%,
+    transparent 100%
+  );
+  box-shadow: 0 0 var(--ember-glow-md) var(--color-ember-glow);
+  border-radius: 2px;
+}
+
+/* Linea brasa en hover */
+.header__nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 160, 23, 0.4) 30%,
+    rgba(232, 133, 10, 0.4) 60%,
+    transparent 100%
+  );
+  border-radius: 2px;
+}
+
+/* Acciones header */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Hamburguesa (visible solo en movil) */
+.header__hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-crema);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-base);
+}
+
+.header__hamburger:hover {
+  color: var(--color-dorado);
+}
+
+/* ================================================================
+   9. MENU MOVIL OVERLAY
+   ================================================================ */
+#mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--color-negro);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6) var(--section-px) var(--space-8);
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  overflow-y: auto;
+}
+
+#mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-12);
+  height: var(--header-height);
+}
+
+.mobile-menu__logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-dorado);
+  letter-spacing: var(--ls-oswald);
+}
+
+.mobile-menu__close {
+  color: var(--color-crema);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-base);
+}
+
+.mobile-menu__close:hover {
+  color: var(--color-dorado);
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-menu__link {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--color-crema);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-oswald);
+  position: relative;
+  padding-bottom: var(--space-2);
+  transition: color var(--transition-base);
+}
+
+.mobile-menu__link:hover {
+  color: var(--color-dorado);
+}
+
+.mobile-menu__link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-dorado-500) 30%,
+    var(--color-ambar-500) 60%,
+    transparent 100%
+  );
+  box-shadow: 0 0 var(--ember-glow-md) var(--color-ember-glow);
+  border-radius: 2px;
+}
+
+/* CTA WhatsApp en menu movil */
+#mobile-menu .btn--primary {
+  margin-top: var(--space-8);
+  border-radius: var(--radius-lg);
+}
+
+/* ================================================================
+   10. HERO (DESIGN.md §9.2)
+   ================================================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: clamp(4rem, 10vh, 8rem);
+  overflow: hidden;
+}
+
+/* Fondo con parallax */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  /* Se extiende un poco para acomodar el parallax sin mostrar edges */
+  top: -15%;
+  height: 115%;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Overlay gradiente */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.30) 0%,
+    rgba(13, 13, 13, 0.50) 40%,
+    rgba(13, 13, 13, 0.75) 100%
+  );
+}
+
+/* Grain/noise */
+.hero__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Contenido del hero */
+.hero__content {
+  position: relative;
+  z-index: 3;
+  will-change: transform;
+  padding: 0 var(--section-px);
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-acento);
+  font-style: italic;
+  font-size: var(--text-acento-md);
+  color: rgba(212, 160, 23, 0.8);
+  letter-spacing: var(--ls-wide);
+  margin-bottom: var(--space-4);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-display-xl);
+  color: var(--color-dorado);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tightest);
+  text-transform: uppercase;
+  margin-bottom: var(--space-5);
+}
+
+.hero__subtitle {
+  font-family: var(--font-acento);
+  font-style: italic;
+  font-size: var(--text-acento-lg);
+  color: rgba(242, 237, 224, 0.85);
+  letter-spacing: var(--ls-normal);
+  margin-bottom: var(--space-8);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* Indicador de scroll */
+.hero__scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-10);
+}
+
+.hero__scroll-text {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.6rem;
+  color: var(--color-dorado);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--color-dorado);
+  opacity: 0.6;
+  animation: scrollPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%   { transform: translateY(0); opacity: 0.6; }
+  50%  { transform: translateY(12px); opacity: 0.2; }
+  100% { transform: translateY(0); opacity: 0.6; }
+}
+
+/* ================================================================
+   11. DOS MOMENTOS (DESIGN.md §9.3)
+   ================================================================ */
+.dos-momentos {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: auto;
+  overflow: hidden;
+}
+
+.momento {
+  position: relative;
+  overflow: hidden;
+  min-height: 50vh;
+  cursor: default;
+}
+
+.momento__img-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.momento__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 800ms ease;
+}
+
+.momento:hover .momento__img-wrap img {
+  transform: scale(1.04);
+}
+
+.momento__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.momento--dia .momento__overlay {
+  background: linear-gradient(135deg, rgba(13, 13, 13, 0.65) 0%, rgba(13, 13, 13, 0.30) 100%);
+}
+
+.momento--noche .momento__overlay {
+  background: linear-gradient(225deg, rgba(13, 13, 13, 0.75) 0%, rgba(13, 13, 13, 0.40) 100%);
+}
+
+.momento__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-8) var(--space-8);
+  z-index: 2;
+}
+
+.momento__tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-ui-badge);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  background: rgba(13, 13, 13, 0.6);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.momento--dia .momento__tag {
+  color: rgba(212, 160, 23, 0.9);
+}
+
+.momento--noche .momento__tag {
+  color: var(--color-dorado);
+}
+
+.momento__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-display-md);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+}
+
+.momento--dia .momento__title {
+  color: var(--color-crema);
+}
+
+.momento--noche .momento__title {
+  color: var(--color-dorado);
+}
+
+.momento__items {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(242, 237, 224, 0.75);
+  letter-spacing: var(--ls-wide);
+}
+
+/* ================================================================
+   12. PLATOS ESTRELLA (DESIGN.md §9.4)
+   ================================================================ */
+.platos-estrella {
+  background: var(--color-negro);
+  overflow: hidden;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+/* Tarjeta estrella */
+.card--star {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-carbon);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-glow);
+}
+
+.card--star:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-gold-hover);
+}
+
+.card--star__image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.card--star__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.card--star:hover .card--star__image-wrap img {
+  transform: scale(1.06);
+}
+
+.card--star__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 13, 13, 0.95) 0%,
+    rgba(13, 13, 13, 0.60) 45%,
+    rgba(13, 13, 13, 0.10) 100%
+  );
+}
+
+.card--star__badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-ui-badge);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+  color: var(--color-dorado);
+  background: rgba(13, 13, 13, 0.85);
+  border: 1px solid var(--color-dorado-line);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-sm);
+}
+
+.card--star__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  z-index: 2;
+}
+
+.card--star__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: var(--color-crema);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-snug);
+  margin-bottom: var(--space-2);
+}
+
+.card--star__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-xs);
+  color: rgba(242, 237, 224, 0.70);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-3);
+}
+
+.card--star__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-dorado-line);
+  padding-top: var(--space-3);
+}
+
+.card--star__price {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-ui-price);
+  color: var(--color-ambar);
+}
+
+.card--star__cta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-body-xs);
+  color: rgba(212, 160, 23, 0.7);
+  transition: color var(--transition-base);
+}
+
+.card--star__cta:hover {
+  color: var(--color-dorado);
+}
+
+/* ================================================================
+   13. CARTA COMPLETA — TABS Y PLATOS (DESIGN.md §9.5)
+   ================================================================ */
+.carta {
+  background: var(--color-carbon);
+}
+
+/* Tabs */
+.menu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--color-negro-400);
+  margin-bottom: var(--space-8);
+  padding-bottom: 0;
+}
+
+.menu-tab {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-ui-label);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+  padding: 0.6rem 1.2rem;
+  color: rgba(242, 237, 224, 0.55);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base);
+  position: relative;
+  margin-bottom: -1px;
+}
+
+.menu-tab:hover:not(.is-active) {
+  color: rgba(212, 160, 23, 0.7);
+  border-bottom-color: rgba(212, 160, 23, 0.3);
+}
+
+.menu-tab.is-active {
+  color: var(--color-dorado);
+  border-bottom: 2px solid var(--color-dorado);
+  box-shadow: 0 2px 8px var(--color-ember-glow-soft);
+}
+
+/* Grid de platos de la carta */
+.dishes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+/* Tarjeta de plato de carta */
+.card--dish {
+  background: var(--color-negro);
+  border: 1px solid var(--color-negro-400);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-glow);
+}
+
+.card--dish:hover {
+  border-color: var(--color-dorado-line);
+  box-shadow: var(--shadow-ember);
+}
+
+.card--dish__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card--dish__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--color-crema);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-snug);
+  line-height: var(--lh-snug);
+}
+
+.card--dish__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-xs);
+  color: rgba(242, 237, 224, 0.60);
+  line-height: var(--lh-normal);
+}
+
+.card--dish__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-negro-400);
+  padding-top: var(--space-3);
+  margin-top: auto;
+}
+
+.card--dish__price {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-ui-price);
+  color: var(--color-ambar);
+}
+
+.card--dish__cta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-body-xs);
+  color: rgba(212, 160, 23, 0.65);
+  transition: color var(--transition-base);
+}
+
+.card--dish__cta:hover {
+  color: var(--color-dorado);
+}
+
+/* Subtitulo separador dentro de tabs (Especiales / Sencillos / Para llevar) */
+.card--dish--subtitle {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  grid-column: 1 / -1;
+}
+
+.card--dish--subtitle:hover {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.card--dish__subtitulo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-display-sm);
+  color: var(--color-dorado);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  padding: var(--space-4) 0 var(--space-2);
+  border-bottom: 1px solid var(--color-dorado-line);
+}
+
+/* Estado vacio */
+#menu-empty {
+  text-align: center;
+  padding: var(--space-16);
+  color: rgba(242, 237, 224, 0.5);
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+}
+
+/* CTA final de seccion carta */
+.carta__cta-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-8);
+}
+
+/* ================================================================
+   14. GALERIA (DESIGN.md §9.6)
+   ================================================================ */
+.galeria {
+  background: var(--color-negro);
+  overflow: hidden;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  aspect-ratio: 1 / 1;
+  background: var(--color-carbon);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+  display: block;
+}
+
+.gallery__item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay-ambar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.gallery__item:hover .gallery__overlay {
+  opacity: 1;
+}
+
+.gallery__lupa {
+  width: 40px;
+  height: 40px;
+  color: var(--color-crema);
+  transform: scale(0.8);
+  transition: transform var(--transition-base);
+}
+
+.gallery__item:hover .gallery__lupa {
+  transform: scale(1);
+}
+
+/* ================================================================
+   15. UBICACION (DESIGN.md §9.7)
+   ================================================================ */
+.ubicacion {
+  background: var(--color-negro);
+}
+
+.ubicacion__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+.ubicacion__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.ubicacion__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.ubicacion__icon-wrap {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-dorado-line);
+  background: rgba(212, 160, 23, 0.08);
+  color: var(--color-dorado);
+}
+
+.ubicacion__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ubicacion__label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: var(--color-dorado);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+}
+
+.ubicacion__value {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  color: var(--color-crema);
+  line-height: var(--lh-normal);
+}
+
+.ubicacion__value--link {
+  transition: color var(--transition-base);
+}
+
+.ubicacion__value--link:hover {
+  color: var(--color-dorado);
+}
+
+.ubicacion__mapa iframe {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-dorado-line);
+  display: block;
+  background: var(--color-carbon);
+  min-height: 300px;
+}
+
+/* ================================================================
+   16. FOOTER (DESIGN.md §9.8)
+   ================================================================ */
+#footer {
+  background: var(--color-negro);
+  border-top: 2px solid var(--color-dorado-line);
+  box-shadow: 0 -4px 16px var(--color-ember-glow-soft);
+}
+
+.footer__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--section-py) var(--section-px) var(--space-8);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: var(--space-4);
+  width: fit-content;
+}
+
+.footer__logo-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-dorado);
+  letter-spacing: var(--ls-oswald);
+  text-transform: uppercase;
+}
+
+.footer__logo-sub {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.6rem;
+  color: rgba(242, 237, 224, 0.6);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  display: block;
+  margin-top: 2px;
+}
+
+.footer__tagline {
+  font-family: var(--font-acento);
+  font-style: italic;
+  font-size: var(--text-acento-md);
+  color: rgba(212, 160, 23, 0.7);
+  margin-bottom: var(--space-3);
+}
+
+.footer__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(242, 237, 224, 0.5);
+  line-height: var(--lh-relaxed);
+  max-width: 32ch;
+}
+
+.footer__col-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.7rem;
+  color: rgba(212, 160, 23, 0.6);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+  margin-bottom: var(--space-4);
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__nav-link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(242, 237, 224, 0.55);
+  transition: color var(--transition-base);
+}
+
+.footer__nav-link:hover {
+  color: var(--color-dorado);
+}
+
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__contact-link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(242, 237, 224, 0.55);
+  transition: color var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer__contact-link:hover {
+  color: var(--color-ambar);
+}
+
+.footer__contact-link--instagram:hover {
+  color: var(--color-dorado);
+}
+
+.footer__contact-address {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: rgba(242, 237, 224, 0.45);
+  line-height: var(--lh-normal);
+  font-style: normal;
+}
+
+.footer__copyright {
+  border-top: 1px solid rgba(212, 160, 23, 0.15);
+  padding-top: var(--space-6);
+  margin-top: var(--space-8);
+  text-align: center;
+}
+
+.footer__copyright p {
+  font-family: var(--font-body);
+  font-size: var(--text-body-xs);
+  color: rgba(242, 237, 224, 0.35);
+}
+
+/* ================================================================
+   17. FAB WHATSAPP (DESIGN.md §9.9)
+   ================================================================ */
+.fab-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: var(--color-whatsapp);
+  color: var(--color-crema);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 20px rgba(37, 211, 102, 0.40),
+    0 2px 8px var(--color-shadow-dark);
+  transition:
+    background var(--transition-base),
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.fab-whatsapp:hover {
+  background: var(--color-whatsapp-dark);
+  transform: scale(1.08);
+  box-shadow:
+    0 6px 28px rgba(37, 211, 102, 0.55),
+    0 2px 10px var(--color-shadow-dark);
+}
+
+/* ================================================================
+   18. RESPONSIVE — MOBILE-FIRST UPGRADES
+   ================================================================ */
+
+/* sm: >= 480px */
+@media (min-width: 480px) {
+  .cards-grid,
+  .dishes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* md: >= 640px */
+@media (min-width: 640px) {
+  .dos-momentos {
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+  }
+
+  .momento {
+    min-height: 70vh;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery__item--featured {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ubicacion__mapa iframe {
+    min-height: 420px;
+  }
+}
+
+/* lg: >= 1024px */
+@media (min-width: 1024px) {
+  /* Header: mostrar nav desktop y boton WA, ocultar hamburguesa */
+  .header__nav {
+    display: flex;
+  }
+
+  .btn--header-wa {
+    display: inline-flex;
+  }
+
+  .header__hamburger {
+    display: none;
+  }
+
+  /* Cards: 3 columnas */
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dishes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Galeria asimetrica */
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  .gallery__item--featured {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Separador vertical en Dos Momentos */
+  .dos-momentos::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    height: 40%;
+    width: 1px;
+    background: var(--color-dorado-line);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Ubicacion: 2 columnas */
+  .ubicacion__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  /* Footer: 3 columnas */
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+/* xl: >= 1280px */
+@media (min-width: 1280px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ================================================================
+   19. ACCESIBILIDAD — prefers-reduced-motion (DESIGN.md §12)
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .momento--dia.reveal,
+  .momento--noche.reveal {
+    transform: none;
+  }
+
+  .hero__grain {
+    animation: none;
+  }
+
+  .hero__scroll-line {
+    animation: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Fogatta Restaurante — Parrilla al Carbón · Turbaco, Bolívar</title>
+  <meta name="description" content="La Fogatta es la parrilla artesanal de Turbaco. Hamburguesas al carbón, cortes, chicharrón, sancochos y más. Pide tu domicilio al +57 301 649 0272.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="La Fogatta Restaurante — Artesanales de Tradición">
+  <meta property="og:description" content="Parrilla artesanal al carbón en Turbaco, Bolívar. Hamburguesas, asados, chicharrón, sancochos y domicilios.">
+  <meta property="og:image" content="assets/FOGATTA_AVISO.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+
+  <!-- Favicon: símbolo de llama + troncos recortado del logo -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- Google Fonts preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Oswald:wght@700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       HEADER
+       ================================================================ -->
+  <header id="header">
+    <div class="header__inner">
+
+      <a href="#hero" class="header__brand" aria-label="La Fogatta Restaurante — inicio">
+        <img src="assets/FOGATTA_AVISO.png" alt="La Fogatta Restaurante" style="height:44px;width:auto;">
+      </a>
+
+      <nav class="header__nav" aria-label="Navegación principal">
+        <a class="header__nav-link" href="#menu">Menú</a>
+        <a class="header__nav-link" href="#nosotros">Nosotros</a>
+        <a class="header__nav-link" href="#galeria">Galería</a>
+        <a class="header__nav-link" href="#ubicacion">Ubicación</a>
+      </nav>
+
+      <div class="header__actions">
+        <a
+          id="header-whatsapp-link"
+          href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20hacer%20un%20pedido"
+          class="btn btn--header-wa"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Pedir por WhatsApp"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.1.546 4.07 1.5 5.787L0 24l6.387-1.473A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.647-.487-5.176-1.338l-.371-.22-3.792.875.894-3.683-.242-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          Pedir
+        </a>
+
+        <button
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Abrir menú"
+          class="header__hamburger"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú móvil overlay -->
+    <div id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__logo">LA FOGATTA</span>
+        <button
+          class="mobile-menu__close"
+          aria-label="Cerrar menú"
+          onclick="document.getElementById('menu-toggle').click()"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-menu__nav" aria-label="Menú de navegación móvil">
+        <a class="mobile-menu__link" href="#menu">Menú</a>
+        <a class="mobile-menu__link" href="#nosotros">Nosotros</a>
+        <a class="mobile-menu__link" href="#galeria">Galería</a>
+        <a class="mobile-menu__link" href="#ubicacion">Ubicación</a>
+      </nav>
+
+      <a
+        id="mobile-whatsapp-link"
+        href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20hacer%20un%20pedido"
+        class="btn btn--primary btn--full"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.1.546 4.07 1.5 5.787L0 24l6.387-1.473A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.647-.487-5.176-1.338l-.371-.22-3.792.875.894-3.683-.242-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+        Pedir por WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section id="hero" class="hero">
+      <div class="hero__bg">
+        <img
+          class="hero__img"
+          src="assets/FOGATTA_HERO.png"
+          alt="Pared de piedra con el logo metálico de La Fogatta Restaurante en Turbaco"
+          loading="eager"
+          fetchpriority="high"
+          width="1600"
+          height="900"
+        >
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__grain" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Turbaco &middot; Bol&iacute;var &middot; Colombia</p>
+        <h1 class="hero__title">Artesanales<br>de Tradici&oacute;n</h1>
+        <p class="hero__subtitle">Al carb&oacute;n &middot; Desde la tradici&oacute;n</p>
+        <div class="hero__ctas">
+          <a
+            id="hero-whatsapp-link"
+            href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20hacer%20un%20pedido"
+            class="btn btn--primary btn--brasa"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Pedir ahora</a>
+          <a class="btn btn--ghost" href="#menu">Ver Men&uacute;</a>
+        </div>
+        <div class="hero__scroll-indicator" aria-hidden="true">
+          <span class="hero__scroll-text">Scroll</span>
+          <span class="hero__scroll-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         DOS MOMENTOS — nosotros
+         ================================================================ -->
+    <section id="nosotros" class="dos-momentos section-fade-top section-fade-bottom">
+
+      <div class="momento momento--dia reveal">
+        <div class="momento__img-wrap">
+          <img
+            src="assets/FOGATTA_SALON.png"
+            alt="Sal&oacute;n interior de La Fogatta de d&iacute;a"
+            loading="lazy"
+            width="800"
+            height="560"
+            style="object-position: center 40%;"
+          >
+          <div class="momento__overlay" aria-hidden="true"></div>
+        </div>
+        <div class="momento__content">
+          <span class="momento__tag">De D&iacute;a</span>
+          <h2 class="momento__title">La Mesa<br>Familiar</h2>
+          <p class="momento__items">Sancochos &middot; Asados &middot; Desayunos &middot; Familia</p>
+        </div>
+      </div>
+
+      <div class="momento momento--noche reveal">
+        <div class="momento__img-wrap">
+          <img
+            src="assets/FOGATTA_TERRAZA.png"
+            alt="Terraza de La Fogatta de noche"
+            loading="lazy"
+            width="800"
+            height="560"
+            style="object-position: center 50%;"
+          >
+          <div class="momento__overlay" aria-hidden="true"></div>
+        </div>
+        <div class="momento__content">
+          <span class="momento__tag">De Noche</span>
+          <h2 class="momento__title">La Parrilla<br>Viva</h2>
+          <p class="momento__items">Burgers &middot; Perros &middot; Cortes &middot; Tradici&oacute;n</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================================================================
+         PLATOS ESTRELLA
+         ================================================================ -->
+    <section id="platos-estrella" class="platos-estrella section-fade-top section-fade-bottom">
+      <div class="section__container">
+        <div class="section__heading reveal">
+          <p class="section__eyebrow">Lo que todos piden</p>
+          <h2 class="section__title">Platos Estrella</h2>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- 1. Hamburguesa Rustika -->
+          <article class="card--star ember-border--always reveal" style="--reveal-index: 0;">
+            <div class="card--star__image-wrap">
+              <img
+                src="assets/FOGATTA_BURGER.png"
+                alt="Hamburguesa Rustika al carb&oacute;n de La Fogatta"
+                loading="lazy"
+                width="600"
+                height="450"
+                style="object-position: center center;"
+              >
+              <div class="card--star__overlay" aria-hidden="true"></div>
+              <span class="card--star__badge">Hamburguesas</span>
+            </div>
+            <div class="card--star__body">
+              <h3 class="card--star__name">Hamburguesa Rustika</h3>
+              <p class="card--star__desc">360gr artesanal al carb&oacute;n, doble carne, pan brioche, mermelada de tocineta, queso mozzarella y cheddar</p>
+              <div class="card--star__footer">
+                <span class="card--star__price">$35.000</span>
+                <a
+                  href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20una%20Hamburguesa%20Rustika"
+                  class="card--star__cta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Pedir este plato &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Corte Especial -->
+          <article class="card--star ember-border--always reveal" style="--reveal-index: 1;">
+            <div class="card--star__image-wrap">
+              <img
+                src="assets/FOGATTA_ASADOS.png"
+                alt="Corte Especial La Fogatta &mdash; churrasco argentino a la brasa"
+                loading="lazy"
+                width="600"
+                height="450"
+                style="object-position: center 35%;"
+              >
+              <div class="card--star__overlay" aria-hidden="true"></div>
+              <span class="card--star__badge">Corte Especial</span>
+            </div>
+            <div class="card--star__body">
+              <h3 class="card--star__name">Corte Especial La Fogatta</h3>
+              <p class="card--star__desc">Churrasco argentino estilo mariposa, sal parrillera gruesa, 3 pimentas artesanales, Yuquitas Crunch</p>
+              <div class="card--star__footer">
+                <span class="card--star__price">$43.000</span>
+                <a
+                  href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20el%20Corte%20Especial"
+                  class="card--star__cta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Pedir este plato &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Picada La Fogatta -->
+          <article class="card--star ember-border--always reveal" style="--reveal-index: 2;">
+            <div class="card--star__image-wrap">
+              <img
+                src="https://loremflickr.com/600/450/bbq,platter,dark?lock=41"
+                alt="Picada La Fogatta &mdash; plato para compartir al carb&oacute;n"
+                loading="lazy"
+                width="600"
+                height="450"
+              >
+              <div class="card--star__overlay" aria-hidden="true"></div>
+              <span class="card--star__badge">Picadas</span>
+            </div>
+            <div class="card--star__body">
+              <h3 class="card--star__name">Picada La Fogatta</h3>
+              <p class="card--star__desc">660gr lomo cerdo y pechuga, chicharr&oacute;n 300gr, 4 chorizos santarrosanos, bollo o arepa, pl&aacute;tano</p>
+              <div class="card--star__footer">
+                <span class="card--star__price">$88.000</span>
+                <a
+                  href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20la%20Picada%20La%20Fogatta"
+                  class="card--star__cta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Pedir este plato &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Chicharrón al Barril Extra -->
+          <article class="card--star ember-border--always reveal" style="--reveal-index: 3;">
+            <div class="card--star__image-wrap">
+              <img
+                src="https://loremflickr.com/600/450/pork,crispy,food?lock=42"
+                alt="Chicharr&oacute;n al Barril Extra de La Fogatta"
+                loading="lazy"
+                width="600"
+                height="450"
+              >
+              <div class="card--star__overlay" aria-hidden="true"></div>
+              <span class="card--star__badge">Chicharr&oacute;n</span>
+            </div>
+            <div class="card--star__body">
+              <h3 class="card--star__name">Chicharr&oacute;n al Barril Extra</h3>
+              <p class="card--star__desc">320gr al barril, yuca o bollo, suero coste&ntilde;o</p>
+              <div class="card--star__footer">
+                <span class="card--star__price">$32.000</span>
+                <a
+                  href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Chicharr%C3%B3n%20al%20Barril%20Extra"
+                  class="card--star__cta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Pedir este plato &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Suizo Premium -->
+          <article class="card--star ember-border--always reveal" style="--reveal-index: 4;">
+            <div class="card--star__image-wrap">
+              <img
+                src="https://loremflickr.com/600/450/hotdog,gourmet,food?lock=43"
+                alt="Suizo Premium La Fogatta &mdash; perro artesanal"
+                loading="lazy"
+                width="600"
+                height="450"
+              >
+              <div class="card--star__overlay" aria-hidden="true"></div>
+              <span class="card--star__badge">Perros</span>
+            </div>
+            <div class="card--star__body">
+              <h3 class="card--star__name">Suizo Premium La Fogatta</h3>
+              <p class="card--star__desc">Salchicha suiza extra premium, ma&iacute;z tierno hidratado, mermelada de tocineta en reducci&oacute;n de miel licor</p>
+              <div class="card--star__footer">
+                <span class="card--star__price">$27.500</span>
+                <a
+                  href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20el%20Suizo%20Premium"
+                  class="card--star__cta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Pedir este plato &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Sancocho de Costilla Caldero -->
+          <article class="card--star ember-border--always reveal" style="--reveal-index: 5;">
+            <div class="card--star__image-wrap">
+              <img
+                src="https://loremflickr.com/600/450/stew,soup,food?lock=44"
+                alt="Sancocho de Costilla Caldero de La Fogatta"
+                loading="lazy"
+                width="600"
+                height="450"
+              >
+              <div class="card--star__overlay" aria-hidden="true"></div>
+              <span class="card--star__badge">Sancochos</span>
+            </div>
+            <div class="card--star__body">
+              <h3 class="card--star__name">Sancocho de Costilla Caldero</h3>
+              <p class="card--star__desc">Caldero sanchochero tradicional, porci&oacute;n familiar, costilla de res al punto</p>
+              <div class="card--star__footer">
+                <span class="card--star__price">$32.000</span>
+                <a
+                  href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Sancocho%20de%20Costilla"
+                  class="card--star__cta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Pedir este plato &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         CARTA COMPLETA — menu
+         ================================================================ -->
+    <section id="menu" class="carta">
+      <div class="section__container">
+        <div class="section__heading reveal">
+          <p class="section__eyebrow">Todo lo que preparamos</p>
+          <h2 class="section__title section__title--crema">Nuestra Carta</h2>
+        </div>
+
+        <!-- Tabs de categorías -->
+        <div
+          role="tablist"
+          aria-label="Categor&iacute;as del men&uacute;"
+          class="menu-tabs"
+        >
+          <button class="menu-tab is-active" data-cat="hamburguesas" role="tab" aria-selected="true">Hamburguesas</button>
+          <button class="menu-tab" data-cat="asados" role="tab" aria-selected="false">Asados</button>
+          <button class="menu-tab" data-cat="perros" role="tab" aria-selected="false">Perros</button>
+          <button class="menu-tab" data-cat="chicharron" role="tab" aria-selected="false">Chicharr&oacute;n</button>
+          <button class="menu-tab" data-cat="picadas" role="tab" aria-selected="false">Picadas</button>
+          <button class="menu-tab" data-cat="sancochos" role="tab" aria-selected="false">Sancochos</button>
+          <button class="menu-tab" data-cat="bebidas" role="tab" aria-selected="false">Bebidas</button>
+          <button class="menu-tab" data-cat="postres" role="tab" aria-selected="false">Postres</button>
+        </div>
+
+        <!-- Grid de platos -->
+        <div class="dishes-grid">
+
+          <!-- HAMBURGUESAS -->
+          <article class="card--dish reveal" data-categoria="hamburguesas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Hamburguesa Rustika</h3>
+              <p class="card--dish__desc">360gr artesanal al carb&oacute;n, doble carne, pan brioche, mermelada de tocineta, mozzarella y cheddar</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$35.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20la%20Rustika" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="hamburguesas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">La Hoguera</h3>
+              <p class="card--dish__desc">Hamburguesa artesanal al carb&oacute;n con toque especial de la casa</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$27.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20La%20Hoguera" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="hamburguesas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Serrana</h3>
+              <p class="card--dish__desc">Hamburguesa artesanal al carb&oacute;n estilo serrano</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$30.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20la%20Serrana" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="hamburguesas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Cl&aacute;sica al Carb&oacute;n</h3>
+              <p class="card--dish__desc">La hamburguesa cl&aacute;sica, hecha al carb&oacute;n, con todos los ingredientes de siempre</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$19.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20la%20Cl%C3%A1sica%20al%20Carb%C3%B3n" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ASADOS — subtítulo Especiales -->
+          <article class="card--dish card--dish--subtitle reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <p class="card--dish__subtitulo">Especiales 330gr &mdash; Con chorizo santarrosano</p>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Lomo de Cerdo Especial</h3>
+              <p class="card--dish__desc">330gr a la brasa con chorizo santarrosano</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$29.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Lomo%20de%20Cerdo%20Especial" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Pechuga Especial</h3>
+              <p class="card--dish__desc">330gr pechuga a la brasa con chorizo santarrosano</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$27.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Pechuga%20Especial" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Chuleta de Cerdo Especial</h3>
+              <p class="card--dish__desc">330gr chuleta al carb&oacute;n con chorizo santarrosano</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$27.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Chuleta%20de%20Cerdo%20Especial" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Carne de Res Especial</h3>
+              <p class="card--dish__desc">330gr carne de res a la brasa con chorizo santarrosano</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$33.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Carne%20de%20Res%20Especial" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Pechuga Gratinada Especial</h3>
+              <p class="card--dish__desc">330gr pechuga gratinada al carb&oacute;n con chorizo santarrosano</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$35.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Pechuga%20Gratinada%20Especial" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ASADOS — subtítulo Sencillos -->
+          <article class="card--dish card--dish--subtitle reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <p class="card--dish__subtitulo">Sencillos 330gr &mdash; Con bollo o arepa</p>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Lomo de Cerdo Sencillo</h3>
+              <p class="card--dish__desc">330gr lomo de cerdo a la brasa con bollo o arepa</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$24.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Lomo%20de%20Cerdo%20Sencillo" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Pechuga Sencilla</h3>
+              <p class="card--dish__desc">330gr pechuga a la brasa con bollo o arepa</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$22.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Pechuga%20Sencilla" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Chuleta Sencilla</h3>
+              <p class="card--dish__desc">330gr chuleta al carb&oacute;n con bollo o arepa</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$22.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Chuleta%20Sencilla" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Carne de Res Sencilla</h3>
+              <p class="card--dish__desc">330gr carne de res a la brasa con bollo o arepa</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$28.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Carne%20de%20Res%20Sencilla" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="asados">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Pechuga Gratinada Sencilla</h3>
+              <p class="card--dish__desc">330gr pechuga gratinada al carb&oacute;n con bollo o arepa</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$30.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Pechuga%20Gratinada%20Sencilla" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PERROS -->
+          <article class="card--dish reveal" data-categoria="perros">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Suizo Premium La Fogatta</h3>
+              <p class="card--dish__desc">Salchicha suiza extra premium, ma&iacute;z tierno hidratado, mermelada de tocineta en reducci&oacute;n de miel licor</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$27.500</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20el%20Suizo%20Premium" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="perros">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Suizo el Carbon&eacute;s</h3>
+              <p class="card--dish__desc">Salchicha suiza al carb&oacute;n con toque carbon&eacute;s de la casa</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$27.500</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20el%20Suizo%20el%20Carbon%C3%A9s" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="perros">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Choriperro Premium Cisco</h3>
+              <p class="card--dish__desc">Choriperro premium con chorizo artesanal tipo cisco</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$25.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20el%20Choriperro%20Premium%20Cisco" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="perros">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Perro Americano</h3>
+              <p class="card--dish__desc">Cl&aacute;sico perro americano con todos los acompa&ntilde;antes tradicionales</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$16.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20el%20Perro%20Americano" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="perros">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Perro Suizo Cl&aacute;sico</h3>
+              <p class="card--dish__desc">Salchicha suiza cl&aacute;sica con los acompa&ntilde;antes de siempre</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$18.500</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20el%20Perro%20Suizo%20Cl%C3%A1sico" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="perros">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Choriperro Cl&aacute;sico</h3>
+              <p class="card--dish__desc">Choriperro cl&aacute;sico con chorizo artesanal de la regi&oacute;n</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$18.500</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20el%20Choriperro%20Cl%C3%A1sico" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- CHICHARRÓN -->
+          <article class="card--dish reveal" data-categoria="chicharron">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Chicharr&oacute;n al Barril Personal</h3>
+              <p class="card--dish__desc">220gr al barril, yuca o bollo, suero coste&ntilde;o</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$23.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Chicharr%C3%B3n%20Personal" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="chicharron">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Chicharr&oacute;n al Barril Extra</h3>
+              <p class="card--dish__desc">320gr al barril, yuca o bollo, suero coste&ntilde;o</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$32.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Chicharr%C3%B3n%20Extra" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PICADAS -->
+          <article class="card--dish reveal" data-categoria="picadas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Picada para Compartir</h3>
+              <p class="card--dish__desc">660gr cerdo y pechuga, 4 chorizos santarrosanos, bollo o arepa, pl&aacute;tano</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$65.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20la%20Picada%20para%20Compartir" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="picadas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Picada La Fogatta</h3>
+              <p class="card--dish__desc">660gr lomo cerdo y pechuga, chicharr&oacute;n 300gr, 4 chorizos santarrosanos, bollo o arepa, pl&aacute;tano</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$88.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20la%20Picada%20La%20Fogatta" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SANCOCHOS -->
+          <article class="card--dish reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Mondongo Personal</h3>
+              <p class="card--dish__desc">Sancocho de mondongo en porci&oacute;n personal</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$17.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Mondongo%20Personal" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Mondongo Caldero</h3>
+              <p class="card--dish__desc">Sancocho de mondongo en caldero, porci&oacute;n familiar</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$27.500</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Mondongo%20Caldero" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Costilla Personal</h3>
+              <p class="card--dish__desc">Sancocho de costilla de res en porci&oacute;n personal</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$23.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Costilla%20Personal" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Costilla Caldero</h3>
+              <p class="card--dish__desc">Sancocho de costilla de res en caldero, porci&oacute;n familiar</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$32.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Costilla%20Caldero" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SANCOCHOS — subtítulo Para llevar -->
+          <article class="card--dish card--dish--subtitle reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <p class="card--dish__subtitulo">Para llevar</p>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Mondongo Mediano (para llevar)</h3>
+              <p class="card--dish__desc">Mondongo en porci&oacute;n mediana para llevar</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$18.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Mondongo%20Mediano%20para%20llevar" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Mondongo Grande (para llevar)</h3>
+              <p class="card--dish__desc">Mondongo en porci&oacute;n grande para llevar</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$24.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Mondongo%20Grande%20para%20llevar" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Costilla Mediana (para llevar)</h3>
+              <p class="card--dish__desc">Sancocho de costilla en porci&oacute;n mediana para llevar</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$24.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Costilla%20Mediana%20para%20llevar" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="sancochos">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Costilla Grande (para llevar)</h3>
+              <p class="card--dish__desc">Sancocho de costilla en porci&oacute;n grande para llevar</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$33.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Costilla%20Grande%20para%20llevar" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BEBIDAS -->
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Jugo de Naranja Familiar</h3>
+              <p class="card--dish__desc">Jugo natural de naranja en presentaci&oacute;n familiar</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$12.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Jugo%20Naranja%20Familiar" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Jugo de Naranja Personal</h3>
+              <p class="card--dish__desc">Jugo natural de naranja en presentaci&oacute;n personal</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$3.500</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Jugo%20Naranja%20Personal" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Limonada</h3>
+              <p class="card--dish__desc">Limonada fr&iacute;a natural</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$9.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Limonada" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Maracuy&aacute;</h3>
+              <p class="card--dish__desc">Jugo de maracuy&aacute; natural</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$10.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Maracuy%C3%A1" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Corozo</h3>
+              <p class="card--dish__desc">Jugo de corozo natural, sabor coste&ntilde;o</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$10.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Corozo" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Fresa</h3>
+              <p class="card--dish__desc">Jugo de fresa natural</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$10.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Jugo%20de%20Fresa" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Soda La Fogatta Frutos Rojos</h3>
+              <p class="card--dish__desc">Soda artesanal de la casa con frutos rojos</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$16.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Soda%20Frutos%20Rojos" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Soda La Fogatta Frutos Amarillos</h3>
+              <p class="card--dish__desc">Soda artesanal de la casa con frutos amarillos</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$16.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Soda%20Frutos%20Amarillos" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Cerveza &Aacute;guila</h3>
+              <p class="card--dish__desc">Cerveza &Aacute;guila fr&iacute;a</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$6.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Cerveza%20%C3%81guila" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Club Colombia</h3>
+              <p class="card--dish__desc">Cerveza Club Colombia fr&iacute;a</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$7.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Club%20Colombia" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Coronita</h3>
+              <p class="card--dish__desc">Cerveza Coronita fr&iacute;a, 207ml</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$8.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Coronita" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="bebidas">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Corona</h3>
+              <p class="card--dish__desc">Cerveza Corona fr&iacute;a, 330ml</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$10.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Corona" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- POSTRES -->
+          <article class="card--dish reveal" data-categoria="postres">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Brownie de Arequipe</h3>
+              <p class="card--dish__desc">Brownie artesanal con relleno de arequipe</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$8.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Brownie%20de%20Arequipe" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="postres">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Helado Premium Popsy</h3>
+              <p class="card--dish__desc">Helado premium Popsy en sabores seleccionados</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$13.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Helado%20Premium%20Popsy" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card--dish reveal" data-categoria="postres">
+            <div class="card--dish__body">
+              <h3 class="card--dish__name">Helado Kids Gomitas</h3>
+              <p class="card--dish__desc">Helado para los m&aacute;s peque&ntilde;os con gomitas de colores</p>
+              <div class="card--dish__footer">
+                <span class="card--dish__price">$15.000</span>
+                <a href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20pedir%20Helado%20Kids%20Gomitas" class="card--dish__cta" target="_blank" rel="noopener noreferrer">Pedir &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Estado vacío requerido por initMenuFilter -->
+        <div id="menu-empty" style="display: none;">
+          <p>No hay platos en esta categor&iacute;a todav&iacute;a.</p>
+        </div>
+
+        <!-- CTA final de sección -->
+        <div class="carta__cta-wrap reveal">
+          <a
+            id="carta-whatsapp-link"
+            href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20hacer%20un%20pedido"
+            class="btn btn--primary btn--brasa"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Hacer pedido por WhatsApp</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         GALERÍA
+         ================================================================ -->
+    <section id="galeria" class="galeria section-fade-top section-fade-bottom">
+      <div class="section__container">
+        <div class="section__heading reveal">
+          <p class="section__eyebrow">En cada plato, fuego</p>
+          <h2 class="section__title section__title--crema">Galer&iacute;a</h2>
+        </div>
+
+        <div class="gallery-grid">
+
+          <!-- Foto 1: destacada 2x2 en desktop -->
+          <div class="gallery__item gallery__item--featured">
+            <img
+              src="assets/FOGATTA_SALON.png"
+              alt="Interior del sal&oacute;n de La Fogatta"
+              loading="eager"
+              width="800"
+              height="800"
+            >
+            <div class="gallery__overlay" aria-hidden="true">
+              <svg class="gallery__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Foto 2 -->
+          <div class="gallery__item">
+            <img src="assets/FOGATTA_TERRAZA.png" alt="Terraza exterior de La Fogatta" loading="lazy" width="600" height="600">
+            <div class="gallery__overlay" aria-hidden="true">
+              <svg class="gallery__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Foto 3 -->
+          <div class="gallery__item">
+            <img src="assets/FOGATTA_BURGER.png" alt="Hamburguesa Rustika de La Fogatta" loading="lazy" width="600" height="600">
+            <div class="gallery__overlay" aria-hidden="true">
+              <svg class="gallery__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Foto 4 -->
+          <div class="gallery__item">
+            <img src="assets/FOGATTA_ASADOS.png" alt="Asados al carb&oacute;n de La Fogatta" loading="lazy" width="600" height="600">
+            <div class="gallery__overlay" aria-hidden="true">
+              <svg class="gallery__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Foto 5 -->
+          <div class="gallery__item">
+            <img src="https://loremflickr.com/600/600/bbq,grill,dark?lock=51" alt="Parrilla de carb&oacute;n en La Fogatta" loading="lazy" width="600" height="600">
+            <div class="gallery__overlay" aria-hidden="true">
+              <svg class="gallery__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Foto 6 -->
+          <div class="gallery__item">
+            <img src="https://loremflickr.com/600/600/food,restaurant,dark?lock=52" alt="Platos de La Fogatta" loading="lazy" width="600" height="600">
+            <div class="gallery__overlay" aria-hidden="true">
+              <svg class="gallery__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Foto 7 -->
+          <div class="gallery__item">
+            <img src="https://loremflickr.com/600/600/meat,grilled,fire?lock=53" alt="Carnes a la brasa en La Fogatta" loading="lazy" width="600" height="600">
+            <div class="gallery__overlay" aria-hidden="true">
+              <svg class="gallery__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Foto 8 -->
+          <div class="gallery__item">
+            <img src="https://loremflickr.com/600/600/burger,food,restaurant?lock=54" alt="Burgers artesanales de La Fogatta" loading="lazy" width="600" height="600">
+            <div class="gallery__overlay" aria-hidden="true">
+              <svg class="gallery__lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         UBICACIÓN
+         ================================================================ -->
+    <section id="ubicacion" class="ubicacion">
+      <div class="section__container">
+        <div class="section__heading reveal">
+          <p class="section__eyebrow">Encontrarnos</p>
+          <h2 class="section__title section__title--crema">D&oacute;nde Estamos</h2>
+        </div>
+
+        <div class="ubicacion__grid">
+
+          <!-- Columna info -->
+          <div class="ubicacion__info">
+            <dl class="ubicacion__lista">
+
+              <div class="ubicacion__item reveal">
+                <dt class="ubicacion__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </dt>
+                <dd class="ubicacion__text">
+                  <span class="ubicacion__label">Direcci&oacute;n</span>
+                  <address class="ubicacion__value">Calle 27 #33-15, Turbaco, Bol&iacute;var</address>
+                </dd>
+              </div>
+
+              <div class="ubicacion__item reveal">
+                <dt class="ubicacion__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.1.546 4.07 1.5 5.787L0 24l6.387-1.473A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.647-.487-5.176-1.338l-.371-.22-3.792.875.894-3.683-.242-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                  </svg>
+                </dt>
+                <dd class="ubicacion__text">
+                  <span class="ubicacion__label">Domicilios / WhatsApp</span>
+                  <a
+                    href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20hacer%20un%20pedido"
+                    class="ubicacion__value ubicacion__value--link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >+57 301 649 0272</a>
+                </dd>
+              </div>
+
+              <div class="ubicacion__item reveal">
+                <dt class="ubicacion__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
+                  </svg>
+                </dt>
+                <dd class="ubicacion__text">
+                  <span class="ubicacion__label">Llamadas</span>
+                  <a href="tel:+573007701495" class="ubicacion__value ubicacion__value--link">+57 300 770 1495</a>
+                </dd>
+              </div>
+
+              <div class="ubicacion__item reveal">
+                <dt class="ubicacion__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </dt>
+                <dd class="ubicacion__text">
+                  <span class="ubicacion__label">Redes Sociales</span>
+                  <a
+                    href="https://instagram.com/lafogattarestaurante"
+                    class="ubicacion__value ubicacion__value--link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >@lafogattarestaurante</a>
+                </dd>
+              </div>
+
+              <div class="ubicacion__item reveal">
+                <dt class="ubicacion__icon-wrap" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </dt>
+                <dd class="ubicacion__text">
+                  <span class="ubicacion__label">Horario</span>
+                  <!-- CONFIRMAR HORARIO REAL CON EL CLIENTE -->
+                  <span class="ubicacion__value">Abierto todos los d&iacute;as</span>
+                </dd>
+              </div>
+
+            </dl>
+
+            <a
+              href="https://maps.google.com/?q=Calle+27+%2333-15,+Turbaco,+Bol%C3%ADvar,+Colombia"
+              class="btn btn--ghost btn--ubicacion"
+              target="_blank"
+              rel="noopener noreferrer"
+            >C&oacute;mo llegar &rarr;</a>
+
+          </div>
+
+          <!-- Mapa embebido -->
+          <div class="ubicacion__mapa reveal">
+            <iframe
+              src="about:blank"
+              width="100%"
+              height="420"
+              loading="lazy"
+              title="Ubicaci&oacute;n de La Fogatta Restaurante en Turbaco"
+              aria-label="Mapa de ubicaci&oacute;n de La Fogatta Restaurante"
+              style="border-radius: var(--radius-lg); border: 1px solid var(--color-dorado-line);"
+            ></iframe>
+            <!-- REEMPLAZAR src="about:blank" con el embed real de Google Maps -->
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer id="footer">
+    <div class="footer__inner">
+
+      <div class="footer__grid">
+
+        <!-- Columna 1: Logo y misión -->
+        <div class="footer__col footer__col--brand">
+          <a href="#hero" class="footer__brand" aria-label="La Fogatta Restaurante &mdash; volver al inicio">
+            <span class="footer__logo-name">LA FOGATTA</span>
+            <span class="footer__logo-sub">Restaurante</span>
+          </a>
+          <p class="footer__tagline">Artesanales de Tradici&oacute;n</p>
+          <p class="footer__desc">Parrilla al carb&oacute;n en el coraz&oacute;n de Turbaco. Cocina artesanal, tradici&oacute;n familiar.</p>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <div class="footer__col">
+          <p class="footer__col-title">ENLACES</p>
+          <nav aria-label="Navegaci&oacute;n del pie de p&aacute;gina">
+            <ul class="footer__nav-list">
+              <li><a href="#menu" class="footer__nav-link">Men&uacute;</a></li>
+              <li><a href="#nosotros" class="footer__nav-link">Nosotros</a></li>
+              <li><a href="#galeria" class="footer__nav-link">Galer&iacute;a</a></li>
+              <li><a href="#ubicacion" class="footer__nav-link">Ubicaci&oacute;n</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Columna 3: Contacto -->
+        <div class="footer__col">
+          <p class="footer__col-title">CONTACTO</p>
+          <ul class="footer__contact-list">
+            <li>
+              <a
+                id="footer-whatsapp-link"
+                href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20hacer%20un%20pedido"
+                class="footer__contact-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >+57 301 649 0272</a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/lafogattarestaurante"
+                class="footer__contact-link footer__contact-link--instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+                @lafogattarestaurante
+              </a>
+            </li>
+            <li>
+              <address class="footer__contact-address">Calle 27 #33-15, Turbaco, Bol&iacute;var</address>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__copyright">
+        <p>&copy; <span id="footer-year"></span> La Fogatta Restaurante. Todos los derechos reservados.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       FAB WHATSAPP FIJO
+       ================================================================ -->
+  <a
+    id="fab-whatsapp-link"
+    href="https://wa.me/573016490272?text=Hola%20La%20Fogatta%2C%20quiero%20hacer%20un%20pedido"
+    class="fab-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Pedir por WhatsApp"
+  >
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.1.546 4.07 1.5 5.787L0 24l6.387-1.473A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.647-.487-5.176-1.338l-.371-.22-3.792.875.894-3.683-.242-.381A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

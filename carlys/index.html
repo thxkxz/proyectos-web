@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Carly's Resto Bar — Gastrobar Premium en Turbaco, Colombia</title>
+  <meta
+    name="description"
+    content="Carly's Resto Bar en Turbaco, Bolívar: cortes Angus importados, lomos al leñador, salmón a la parrilla y burgers premium. Democratizamos buenas experiencias. 4.5★ · +590 reseñas en Google."
+  />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Carly's Resto Bar — Gastrobar Premium en Turbaco" />
+  <meta property="og:description" content="Democratizamos buenas experiencias. Cortes Angus importados, lomos al leñador y lo mejor del mar. En Turbaco, para todos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_CO" />
+  <!-- REEMPLAZAR: subir foto real del restaurante (1200×630px) y actualizar esta URL -->
+  <meta property="og:image" content="https://loremflickr.com/1200/630/grilled,steak,dark?lock=10" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Favicon: copa de vino en SVG data-uri -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍷</text></svg>"
+  />
+
+  <!-- Preconnects para Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fuentes premium Carly's Resto Bar (DESIGN.md §2) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+    HEADER STICKY — vino glass con blur
+    ============================================================ -->
+  <header class="header" id="header" role="banner">
+    <div class="container header__inner">
+
+      <!-- Logo -->
+      <a href="#inicio" class="header__logo" aria-label="Carly's Resto Bar — ir al inicio">
+        <span class="header__logo-name">Carly's</span>
+        <span class="header__logo-sub">Resto Bar</span>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__nav-list" role="list">
+          <li><a href="#menu"     class="header__nav-link">Menú</a></li>
+          <li><a href="#galeria"  class="header__nav-link">Galería</a></li>
+          <li><a href="#ubicacion" class="header__nav-link">Ubicación</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón WhatsApp en header -->
+      <a
+        href="https://wa.me/573145320685?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Carly%27s%20Resto%20Bar"
+        class="header__whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar Carly's Resto Bar por WhatsApp"
+        id="header-whatsapp-link"
+      >
+        <!-- Icono WhatsApp SVG inline -->
+        <svg class="header__whatsapp-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="header__whatsapp-text">WhatsApp</span>
+      </a>
+
+      <!-- Hamburguesa para móvil -->
+      <button
+        class="header__toggle"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menú"
+      >
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menú móvil" aria-hidden="true">
+      <ul class="mobile-menu__list" role="list">
+        <li><a href="#menu"      class="mobile-menu__link">Menú</a></li>
+        <li><a href="#galeria"   class="mobile-menu__link">Galería</a></li>
+        <li><a href="#ubicacion" class="mobile-menu__link">Ubicación</a></li>
+        <li>
+          <a
+            href="https://wa.me/573145320685?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Carly%27s%20Resto%20Bar"
+            class="mobile-menu__link mobile-menu__link--whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="mobile-whatsapp-link"
+          >
+            Contactar por WhatsApp
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+      SECCIÓN 1: HERO
+      ============================================================ -->
+    <section class="hero" id="inicio" aria-label="Portada principal">
+
+      <!-- REEMPLAZAR: sustituir por foto real de parrilla activa con brasas (1920×1080px mínimo) -->
+      <div
+        class="hero__bg"
+        style="background-image: url('https://loremflickr.com/1920/1080/grilled,steak,dark?lock=10');"
+        role="img"
+        aria-label="Corte de carne Angus a la parrilla con brasas vivas en Carly's Resto Bar"
+      ></div>
+
+      <!-- Overlay de gradiente vino (definido en CSS) -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <div class="hero__text">
+
+          <!-- Eyebrow del hero -->
+          <span class="hero__eyebrow" aria-hidden="true">
+            ◆ GASTROBAR · TURBACO, COLOMBIA ◆
+          </span>
+
+          <!-- Chip de calificación Google -->
+          <div class="hero__rating" role="img" aria-label="Calificación 4.5 sobre 5 con más de 590 reseñas en Google">
+            <span class="hero__rating-stars" aria-hidden="true">
+              <!-- 4 estrellas llenas -->
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+              <!-- Media estrella -->
+              <svg width="14" height="14" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="halfHero" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="50%" stop-color="#C9972F"/>
+                    <stop offset="50%" stop-color="rgba(201,151,47,0.25)"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#halfHero)" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/>
+              </svg>
+            </span>
+            <span class="hero__rating-text">4.5★ &nbsp;·&nbsp; +590 reseñas en Google</span>
+          </div>
+
+          <!-- H1 tagline principal -->
+          <h1 class="hero__title">
+            Democratizamos <em>buenas</em> experiencias
+          </h1>
+
+          <!-- Hairline dorada bajo el H1 -->
+          <span class="hero__gold-rule" aria-hidden="true"></span>
+
+          <!-- Subtítulo -->
+          <p class="hero__subtitle">
+            Cortes Angus importados, lomos al leñador y lo mejor del mar. En Turbaco, para todos.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero__actions">
+            <!-- CTA 1: primario dorado -->
+            <a href="#menu" class="btn btn--primary btn--lg">
+              Ver menú
+            </a>
+
+            <!-- CTA 2: outline claro / WhatsApp -->
+            <a
+              href="https://wa.me/573145320685?text=Hola%2C%20quiero%20reservar%20o%20hacer%20un%20pedido%20en%20Carly%27s%20Resto%20Bar"
+              class="btn btn--outline-light btn--lg"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="hero-whatsapp-link"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="color: #25D366;">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              WhatsApp
+            </a>
+
+            <!-- CTA 3: Instagram ghost -->
+            <a
+              href="https://www.instagram.com/carlys.restobar/"
+              class="btn btn--ghost btn--lg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver galería de Carly's Resto Bar en Instagram"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="color: #E1306C;">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              Ver galería @carlys.restobar
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Indicador de scroll hacia abajo -->
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      FRANJA DE PRUEBA SOCIAL
+      ============================================================ -->
+    <section class="section--proof" aria-label="Calificación y reseñas en Google">
+      <div class="container">
+        <div class="proof-bar">
+
+          <div class="proof__group">
+            <!-- 5 estrellas (4.5) -->
+            <span class="proof__stars" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="halfProof" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="50%" stop-color="#C9972F"/>
+                    <stop offset="50%" stop-color="#A89880"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#halfProof)" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.785 1.401 8.168L12 18.896l-7.335 3.867 1.401-8.168L.132 9.21l8.2-1.192z"/>
+              </svg>
+            </span>
+
+            <strong class="proof__score">4.5</strong>
+            <span class="proof__pipe" aria-hidden="true">|</span>
+            <span class="proof__reviews">+590 reseñas en Google</span>
+          </div>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Carly%27s+Resto+Bar+Turbaco+Bol%C3%ADvar"
+            class="proof__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver reseñas de Carly's Resto Bar en Google Maps"
+          >
+            Ver en Google Maps &rarr;
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      SECCIÓN 2: MENÚ
+      ============================================================ -->
+    <section class="section section--menu" id="menu" aria-labelledby="menu-titulo">
+      <div class="container">
+
+        <!-- Cabecera de sección -->
+        <div class="section__header reveal">
+          <span class="section__eyebrow" aria-hidden="true">Nuestro Menú</span>
+          <h2 class="section__title section__title--on-light" id="menu-titulo">
+            Platos que cuentan una historia
+          </h2>
+          <span class="section__gold-rule" aria-hidden="true"></span>
+          <p class="section__subtitle section__subtitle--on-light">
+            Ingredientes seleccionados, técnica de parrilla y el sabor de Turbaco.
+          </p>
+        </div>
+
+        <!-- Barra de tabs de categorías -->
+        <div class="menu-tabs reveal" role="tablist" aria-label="Categorías del menú">
+
+          <button
+            class="menu-tab is-active"
+            data-cat="todos"
+            role="tab"
+            aria-selected="true"
+            aria-pressed="true"
+            aria-controls="menu-grid"
+          >
+            Todos
+          </button>
+
+          <button
+            class="menu-tab"
+            data-cat="carnes"
+            role="tab"
+            aria-selected="false"
+            aria-pressed="false"
+            aria-controls="menu-grid"
+          >
+            Carnes Angus Importadas
+          </button>
+
+          <button
+            class="menu-tab"
+            data-cat="lomos"
+            role="tab"
+            aria-selected="false"
+            aria-pressed="false"
+            aria-controls="menu-grid"
+          >
+            Lomos al Leñador
+          </button>
+
+          <button
+            class="menu-tab"
+            data-cat="pescados"
+            role="tab"
+            aria-selected="false"
+            aria-pressed="false"
+            aria-controls="menu-grid"
+          >
+            Pescados
+          </button>
+
+          <button
+            class="menu-tab"
+            data-cat="burgers"
+            role="tab"
+            aria-selected="false"
+            aria-pressed="false"
+            aria-controls="menu-grid"
+          >
+            Burgers
+          </button>
+
+          <button
+            class="menu-tab"
+            data-cat="picadas"
+            role="tab"
+            aria-selected="false"
+            aria-pressed="false"
+            aria-controls="menu-grid"
+          >
+            Picadas
+          </button>
+
+          <button
+            class="menu-tab"
+            data-cat="desgranados"
+            role="tab"
+            aria-selected="false"
+            aria-pressed="false"
+            aria-controls="menu-grid"
+          >
+            Desgranados
+          </button>
+
+        </div>
+        <!-- /menu-tabs -->
+
+        <!-- Grid de platos -->
+        <ul class="menu-grid" id="menu-grid" role="list">
+
+          <!-- ---- PLATO 1: Rib Eye Angus 300gr ---- -->
+          <!-- REEMPLAZAR: foto real 800×600px WebP de @carlys.restobar -->
+          <li class="card card--dish reveal" role="listitem" data-categoria="carnes">
+            <div class="card__media">
+              <img
+                src="https://loremflickr.com/600/450/ribeye,steak,grill?lock=21"
+                alt="Rib Eye Angus 300gr a la parrilla con sal gruesa y romero en Carly's Resto Bar"
+                class="card__img"
+                width="600"
+                height="450"
+                loading="eager"
+                decoding="async"
+              />
+              <span class="card__badge">El Clásico</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Rib Eye Angus 300gr</h3>
+              <p class="card__desc">
+                Corte premium importado, parrilla de carbón, punto perfecto. Sal gruesa y romero. El rey de la casa.
+              </p>
+              <hr class="card__separator" aria-hidden="true" />
+              <div class="card__price-wrapper">
+                <span class="card__price-label">Precio</span>
+                <p class="card__price-amount">
+                  <span class="card__price-currency">$</span>80.000
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <!-- ---- PLATO 2: Lomo fino al leñador ---- -->
+          <!-- REEMPLAZAR: foto real 800×600px WebP de @carlys.restobar -->
+          <li class="card card--dish reveal" role="listitem" data-categoria="lomos">
+            <div class="card__media">
+              <img
+                src="https://loremflickr.com/600/450/tenderloin,grilled?lock=22"
+                alt="Lomo fino al leñador con marcas de parrilla y humo visible en Carly's Resto Bar"
+                class="card__img"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="card__badge">El Favorito</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Lomo fino al leñador</h3>
+              <p class="card__desc">
+                Nuestro plato insignia: lomo tierno con el sabor ahumado auténtico de la leña. Imperdible.
+              </p>
+              <hr class="card__separator" aria-hidden="true" />
+              <div class="card__price-wrapper">
+                <span class="card__price-label">Precio</span>
+                <p class="card__price-amount">
+                  <span class="card__price-currency">$</span>49.500
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <!-- ---- PLATO 3: Salmón a la parrilla ---- -->
+          <!-- REEMPLAZAR: foto real 800×600px WebP de @carlys.restobar -->
+          <li class="card card--dish reveal" role="listitem" data-categoria="pescados">
+            <div class="card__media">
+              <img
+                src="https://loremflickr.com/600/450/grilled,salmon,dark?lock=23"
+                alt="Salmón a la parrilla con piel dorada crujiente y vapor sutil en Carly's Resto Bar"
+                class="card__img"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="card__badge">Del Mar</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Salmón a la parrilla</h3>
+              <p class="card__desc">
+                Salmón fresco, piel dorada crujiente, jugoso por dentro. Una opción del mar con carácter.
+              </p>
+              <hr class="card__separator" aria-hidden="true" />
+              <div class="card__price-wrapper">
+                <span class="card__price-label">Precio</span>
+                <p class="card__price-amount">
+                  <span class="card__price-currency">$</span>33.500
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <!-- ---- PLATO 4: Carly's Burger ---- -->
+          <!-- REEMPLAZAR: foto real 800×600px WebP de @carlys.restobar -->
+          <li class="card card--dish reveal" role="listitem" data-categoria="burgers">
+            <div class="card__media">
+              <img
+                src="https://loremflickr.com/600/450/gourmet,burger?lock=24"
+                alt="Carly's Burger con capas visibles y jugo cayendo, firma de la casa"
+                class="card__img"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="card__badge">Nuestra firma</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Carly's Burger</h3>
+              <p class="card__desc">
+                La burger de la casa. Carne jugosa, pan brioche y los ingredientes que nos definen.
+              </p>
+              <hr class="card__separator" aria-hidden="true" />
+              <div class="card__price-wrapper">
+                <span class="card__price-label">Precio</span>
+                <p class="card__price-amount">
+                  <span class="card__price-currency">$</span>34.000
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <!-- ---- PLATO 5: Royal Angus ---- -->
+          <!-- REEMPLAZAR: foto real 800×600px WebP de @carlys.restobar -->
+          <li class="card card--dish reveal" role="listitem" data-categoria="burgers">
+            <div class="card__media">
+              <img
+                src="https://loremflickr.com/600/450/angus,burger,grill?lock=25"
+                alt="Royal Angus burger con pan brioche dorado y carne rosada en Carly's Resto Bar"
+                class="card__img"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="card__badge">Premium</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Royal Angus</h3>
+              <p class="card__desc">
+                Carne Angus importada en formato burger. Pan brioche tostado, sin atajos, puro sabor.
+              </p>
+              <hr class="card__separator" aria-hidden="true" />
+              <div class="card__price-wrapper">
+                <span class="card__price-label">Precio</span>
+                <p class="card__price-amount">
+                  <span class="card__price-currency">$</span>36.000
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <!-- ---- PLATO 6: Picada personal gratinada ---- -->
+          <!-- REEMPLAZAR: foto real 800×600px WebP de @carlys.restobar -->
+          <li class="card card--dish reveal" role="listitem" data-categoria="picadas">
+            <div class="card__media">
+              <img
+                src="https://loremflickr.com/600/450/appetizer,gratin?lock=26"
+                alt="Picada personal gratinada con costra dorada y hierbas en Carly's Resto Bar"
+                class="card__img"
+                width="600"
+                height="450"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="card__badge">Para compartir</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Picada personal gratinada</h3>
+              <p class="card__desc">
+                Selección de bocados gratinados, costra dorada perfecta. Ideal para empezar bien.
+              </p>
+              <hr class="card__separator" aria-hidden="true" />
+              <div class="card__price-wrapper">
+                <span class="card__price-label">Precio</span>
+                <p class="card__price-amount">
+                  <span class="card__price-currency">$</span>28.000
+                </p>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+        <!-- /menu-grid -->
+
+        <!-- CTA de pedido por WhatsApp -->
+        <div class="section__cta reveal">
+          <a
+            href="https://wa.me/573145320685?text=Hola%2C%20quiero%20hacer%20un%20pedido%20en%20Carly%27s%20Resto%20Bar"
+            class="btn btn--wine btn--lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="servicios-whatsapp-link"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Haz tu pedido por WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      SECCIÓN 3: GALERÍA
+      REEMPLAZAR: todas las fotos por imágenes reales descargadas
+      del perfil @carlys.restobar (1000×1000px WebP, estilo dark & moody)
+      ============================================================ -->
+    <section class="section section--gallery" id="galeria" aria-labelledby="galeria-titulo">
+      <div class="container container--wide">
+
+        <div class="section__header reveal">
+          <span class="section__eyebrow" aria-hidden="true">Nuestra Galería</span>
+          <h2 class="section__title section__title--on-dark" id="galeria-titulo">
+            El sabor en imágenes
+          </h2>
+          <span class="section__gold-rule" aria-hidden="true"></span>
+          <p class="section__subtitle section__subtitle--on-dark">
+            Un vistazo a nuestros platos y al ambiente de Carly's Resto Bar.
+          </p>
+        </div>
+
+        <ul class="gallery-grid reveal" role="list" aria-label="Galería de fotos de Carly's Resto Bar">
+
+          <!-- Celda 1: destacada (2×2 en desktop) -->
+          <li class="gallery-item gallery-item--featured" role="listitem">
+            <a
+              href="https://loremflickr.com/800/800/grilled,meat,dark?lock=31"
+              class="gallery-item__link"
+              aria-label="Ver imagen destacada: corte de carne Angus a la parrilla"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://loremflickr.com/800/800/grilled,meat,dark?lock=31"
+                alt="Corte de carne Angus a la parrilla con brasas vivas — Carly's Resto Bar"
+                class="gallery-item__img"
+                width="800"
+                height="800"
+                loading="eager"
+                decoding="async"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <!-- Celda 2 -->
+          <li class="gallery-item" role="listitem">
+            <a
+              href="https://loremflickr.com/800/800/steak,grill?lock=32"
+              class="gallery-item__link"
+              aria-label="Ver imagen: Rib Eye en punto perfecto"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://loremflickr.com/800/800/steak,grill?lock=32"
+                alt="Rib Eye en su punto perfecto — Carly's Resto Bar"
+                class="gallery-item__img"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <!-- Celda 3 -->
+          <li class="gallery-item" role="listitem">
+            <a
+              href="https://loremflickr.com/800/800/salmon,grilled?lock=33"
+              class="gallery-item__link"
+              aria-label="Ver imagen: salmón a la parrilla"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://loremflickr.com/800/800/salmon,grilled?lock=33"
+                alt="Salmón a la parrilla con piel crujiente dorada — Carly's Resto Bar"
+                class="gallery-item__img"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <!-- Celda 4 -->
+          <li class="gallery-item" role="listitem">
+            <a
+              href="https://loremflickr.com/800/800/ribs,barbecue?lock=34"
+              class="gallery-item__link"
+              aria-label="Ver imagen: costillas a la parrilla"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://loremflickr.com/800/800/ribs,barbecue?lock=34"
+                alt="Costillas a la barbacoa con costra caramelizada — Carly's Resto Bar"
+                class="gallery-item__img"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <!-- Celda 5 -->
+          <li class="gallery-item" role="listitem">
+            <a
+              href="https://loremflickr.com/800/800/burger,gourmet?lock=35"
+              class="gallery-item__link"
+              aria-label="Ver imagen: Carly's Burger"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://loremflickr.com/800/800/burger,gourmet?lock=35"
+                alt="Carly's Burger con capas perfectas — Carly's Resto Bar"
+                class="gallery-item__img"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <!-- Celda 6 -->
+          <li class="gallery-item" role="listitem">
+            <a
+              href="https://loremflickr.com/800/800/restaurant,dark?lock=36"
+              class="gallery-item__link"
+              aria-label="Ver imagen: ambiente del restaurante"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://loremflickr.com/800/800/restaurant,dark?lock=36"
+                alt="Ambiente cálido y elegante de Carly's Resto Bar en Turbaco"
+                class="gallery-item__img"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <!-- Celda 7 -->
+          <li class="gallery-item" role="listitem">
+            <a
+              href="https://loremflickr.com/800/800/fire,grill?lock=37"
+              class="gallery-item__link"
+              aria-label="Ver imagen: parrilla activa con fuego"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://loremflickr.com/800/800/fire,grill?lock=37"
+                alt="Parrilla activa con fuego y brasas vivas — Carly's Resto Bar"
+                class="gallery-item__img"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <!-- Celda 8 -->
+          <li class="gallery-item" role="listitem">
+            <a
+              href="https://loremflickr.com/800/800/food,dark?lock=38"
+              class="gallery-item__link"
+              aria-label="Ver imagen: detalle gastronómico del menú"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="https://loremflickr.com/800/800/food,dark?lock=38"
+                alt="Detalle gastronómico dark and moody — Carly's Resto Bar"
+                class="gallery-item__img"
+                width="800"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+        </ul>
+        <!-- /gallery-grid -->
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      SECCIÓN 4: UBICACIÓN, HORARIO Y CONTACTO
+      ============================================================ -->
+    <section class="section section--location" id="ubicacion" aria-labelledby="ubicacion-titulo">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <span class="section__eyebrow" aria-hidden="true">Encuéntranos</span>
+          <h2 class="section__title section__title--on-light" id="ubicacion-titulo">
+            ¿Dónde estamos?
+          </h2>
+          <span class="section__gold-rule" aria-hidden="true"></span>
+          <p class="section__subtitle section__subtitle--on-light">
+            Visítanos en Turbaco o contáctanos si tienes alguna duda.
+          </p>
+        </div>
+
+        <div class="location-grid">
+
+          <!-- Mapa Google Maps -->
+          <div class="location-map reveal">
+            <iframe
+              class="map-iframe"
+              src="https://www.google.com/maps?q=Carly%27s%20Resto%20Bar%2C%20Turbaco%2C%20Bol%C3%ADvar&output=embed"
+              width="100%"
+              height="420"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación de Carly's Resto Bar en Google Maps"
+              aria-label="Mapa de ubicación de Carly's Resto Bar en Turbaco, Bolívar"
+            ></iframe>
+          </div>
+
+          <!-- Información de contacto y horario -->
+          <div class="location-info reveal">
+
+            <!-- Dirección -->
+            <div class="info-block">
+              <div class="info-block__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="info-block__content">
+                <span class="info-block__label">Dirección</span>
+                <address class="info-block__text">
+                  Urb. La Granja Mz D1, Cr 24 Cl 28,<br>
+                  Turbaco, Bolívar
+                </address>
+              </div>
+            </div>
+
+            <!-- Horario -->
+            <div class="info-block">
+              <div class="info-block__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="info-block__content">
+                <span class="info-block__label">Horario</span>
+                <dl class="schedule">
+                  <div class="schedule__row">
+                    <dt class="schedule__day">Lunes</dt>
+                    <dd class="schedule__time">10:00 — 16:00</dd>
+                  </div>
+                  <div class="schedule__row">
+                    <dt class="schedule__day">Mar — Dom</dt>
+                    <dd class="schedule__time">10:00 — 22:00</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Teléfono / WhatsApp -->
+            <div class="info-block">
+              <div class="info-block__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/>
+                </svg>
+              </div>
+              <div class="info-block__content">
+                <span class="info-block__label">WhatsApp / Teléfono</span>
+                <a href="tel:+573145320685" class="info-block__link">
+                  +57 314 5320685
+                </a>
+              </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="info-block">
+              <div class="info-block__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color: #E1306C;">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              <div class="info-block__content">
+                <span class="info-block__label">Instagram</span>
+                <a
+                  href="https://www.instagram.com/carlys.restobar/"
+                  class="info-block__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @carlys.restobar
+                </a>
+              </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="location-actions">
+              <!-- Cómo llegar -->
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Carly%27s+Resto+Bar+Turbaco+Bol%C3%ADvar"
+                class="btn btn--wine"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Abrir Google Maps para navegar hasta Carly's Resto Bar"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+                </svg>
+                Cómo llegar
+              </a>
+
+              <!-- WhatsApp contacto ubicación -->
+              <a
+                href="https://www.instagram.com/carlys.restobar/"
+                class="btn btn--outline-wine"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Instagram de Carly's Resto Bar"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @carlys.restobar
+              </a>
+            </div>
+
+          </div>
+          <!-- /location-info -->
+
+        </div>
+        <!-- /location-grid -->
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+    FOOTER — vino-deeper con borde superior dorado
+    ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+
+      <!-- Columna 1: Marca -->
+      <div class="footer__col footer__col--brand">
+        <div>
+          <span class="footer__logo-name">
+            Carly's
+            <span class="footer__logo-sub">Resto Bar</span>
+          </span>
+        </div>
+        <p class="footer__tagline">
+          "Democratizamos buenas experiencias"
+        </p>
+        <span class="footer__gold-rule" aria-hidden="true"></span>
+
+        <!-- Iconos sociales -->
+        <div class="footer__social">
+          <a
+            href="https://www.instagram.com/carlys.restobar/"
+            class="footer__social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar Instagram de Carly's Resto Bar"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+
+          <a
+            href="https://wa.me/573145320685?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Carly%27s%20Resto%20Bar"
+            class="footer__social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contactar Carly's Resto Bar por WhatsApp"
+            id="footer-whatsapp-link"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna 2: Navegación -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navegación</h4>
+        <ul class="footer__links" role="list">
+          <li><a href="#inicio"    class="footer__link">Inicio</a></li>
+          <li><a href="#menu"      class="footer__link">Menú</a></li>
+          <li><a href="#galeria"   class="footer__link">Galería</a></li>
+          <li><a href="#ubicacion" class="footer__link">Ubicación</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Contacto -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Contacto</h4>
+
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/>
+          </svg>
+          <a href="tel:+573145320685" class="footer__contact-link">+57 314 5320685</a>
+        </div>
+
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color: #25D366;">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <a
+            href="https://wa.me/573145320685?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Carly%27s%20Resto%20Bar"
+            class="footer__contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+        </div>
+
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Turbaco, Bolívar, Colombia</span>
+        </div>
+
+        <div class="footer__contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:#E1306C;">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <a
+            href="https://www.instagram.com/carlys.restobar/"
+            class="footer__contact-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @carlys.restobar
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divisor -->
+    <div class="footer__divider" aria-hidden="true"></div>
+
+    <!-- Copyright -->
+    <div class="container">
+      <p class="footer__copyright">
+        &copy; <span id="footer-year">2026</span> Carly's Resto Bar &middot; Turbaco, Bolívar
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+    FAB: BOTÓN FLOTANTE DE WHATSAPP
+    ============================================================ -->
+  <a
+    href="https://wa.me/573145320685?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Carly%27s%20Resto%20Bar"
+    class="fab-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar Carly's Resto Bar por WhatsApp"
+    id="fab-whatsapp-link"
+  >
+    <svg class="fab-whatsapp__icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="fab-whatsapp__text">WhatsApp</span>
+  </a>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

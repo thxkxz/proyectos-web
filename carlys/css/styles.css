@@ -1,0 +1,1918 @@
+/* ================================================================
+   CARLY'S RESTO BAR — styles.css
+   Sistema visual premium · Gastrobar oscuro · Turbaco, Colombia
+   Mobile-first, accesible WCAG AA, sin frameworks
+   ================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. TOKENS DE DISEÑO — bloque :root completo (DESIGN.md §6)
+   ---------------------------------------------------------------- */
+:root {
+  /* ============================================================
+     COLORES BASE DE MARCA — Carly's Resto Bar
+     ============================================================ */
+
+  /* Vino profundo */
+  --color-wine:                #6B1A22;
+  --color-wine-dark:           #4A1118;
+  --color-wine-deeper:         #2E0A0F;
+  --color-wine-muted:          #8B3540;
+  --color-wine-overlay:        rgba(43, 9, 14, 0.78);
+  --color-wine-overlay-gallery: rgba(43, 9, 14, 0.55);
+  --color-wine-glass:          rgba(107, 26, 34, 0.65);
+  --color-wine-glass-solid:    rgba(107, 26, 34, 0.96);
+
+  /* Crema cálida */
+  --color-cream:               #F3EEE5;
+  --color-cream-warm:          #EDE6D9;
+  --color-cream-dimmed:        rgba(243, 238, 229, 0.90);
+  --color-cream-subtle:        rgba(243, 238, 229, 0.55);
+  --color-cream-ghost:         rgba(243, 238, 229, 0.12);
+  --color-cream-border:        rgba(243, 238, 229, 0.18);
+
+  /* Taupe */
+  --color-taupe:               #C7B8A1;
+  --color-taupe-dark:          #A89880;
+  --color-taupe-light:         #DDD4C5;
+  --color-taupe-bg:            #EAE3D8;
+
+  /* Dorado */
+  --color-gold:                #C9972F;
+  --color-gold-bright:         #E2AC42;
+  --color-gold-dim:            #A87826;
+  --color-gold-hairline:       rgba(201, 151, 47, 0.40);
+  --color-gold-border:         rgba(201, 151, 47, 0.25);
+  --color-gold-glow:           rgba(201, 151, 47, 0.20);
+
+  /* Texto oscuro cálido */
+  --color-dark:                #2B211C;
+
+  /* Texto semántico */
+  --color-text-on-dark:        #F3EEE5;
+  --color-text-on-dark-muted:  rgba(243, 238, 229, 0.65);
+  --color-text-on-light:       #2B211C;
+  --color-text-on-light-muted: #6B5B4E;
+
+  /* WhatsApp */
+  --color-whatsapp:            #25D366;
+  --color-whatsapp-hover:      #1DA851;
+  --color-whatsapp-shadow:     rgba(37, 211, 102, 0.45);
+
+  /* Instagram */
+  --color-instagram:           #E1306C;
+
+  /* ============================================================
+     TIPOGRAFÍA
+     ============================================================ */
+
+  /* Familias */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body:    'Jost', system-ui, sans-serif;
+  --font-mono:    'Courier New', Courier, monospace;
+
+  /* Escala fluida */
+  --text-display-hero: clamp(2.75rem, 8vw + 0.5rem, 5.5rem);
+  --text-display-xl:   clamp(2.25rem, 5vw + 0.5rem, 3.75rem);
+  --text-display-lg:   clamp(1.875rem, 4vw + 0.25rem, 2.875rem);
+  --text-display-md:   clamp(1.5rem, 3vw + 0.25rem, 2.25rem);
+  --text-display-sm:   clamp(1.25rem, 2vw + 0.25rem, 1.625rem);
+  --text-body-lg:      1.125rem;
+  --text-body-md:      1rem;
+  --text-body-sm:      0.875rem;
+  --text-label:        0.75rem;
+  --text-price:        1.125rem;
+
+  /* Pesos */
+  --font-weight-thin:     300;
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+
+  /* Interlineado */
+  --leading-display: 1.08;
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.6;
+  --leading-loose:   1.8;
+
+  /* ============================================================
+     ESPACIADO
+     ============================================================ */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-5:   1.25rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-10:  2.5rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* Padding de sección */
+  --section-py-mobile:  var(--space-12);
+  --section-py-tablet:  var(--space-16);
+  --section-py-desktop: var(--space-20);
+  --section-py-premium: var(--space-24);
+
+  /* Contenedores */
+  --container-max:        1200px;
+  --container-max-narrow: 780px;
+  --container-max-wide:   1400px;
+  --container-px:         clamp(1.25rem, 5vw, 3rem);
+
+  /* ============================================================
+     RADIOS DE BORDE
+     ============================================================ */
+  --radius-none: 0;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;
+
+  /* ============================================================
+     SOMBRAS CÁLIDAS
+     ============================================================ */
+  --shadow-xs:  0 1px 3px rgba(43, 33, 28, 0.08);
+  --shadow-sm:  0 2px 8px rgba(43, 33, 28, 0.10), 0 1px 3px rgba(43, 33, 28, 0.07);
+  --shadow-md:  0 4px 16px rgba(43, 33, 28, 0.14), 0 2px 6px rgba(43, 33, 28, 0.09);
+  --shadow-lg:  0 8px 32px rgba(43, 33, 28, 0.18), 0 4px 12px rgba(43, 33, 28, 0.10);
+  --shadow-xl:  0 16px 48px rgba(43, 33, 28, 0.22);
+  --shadow-gold: 0 8px 24px rgba(43, 33, 28, 0.18), 0 0 0 1px rgba(201, 151, 47, 0.40);
+  --shadow-whatsapp: 0 4px 20px rgba(37, 211, 102, 0.45);
+
+  /* ============================================================
+     TRANSICIONES
+     ============================================================ */
+  --transition-fast:   120ms ease;
+  --transition-base:   200ms ease;
+  --transition-slow:   380ms ease;
+  --transition-spring: 380ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* ----------------------------------------------------------------
+   2. RESET Y BASE
+   ---------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-on-dark);
+  background-color: var(--color-dark);
+  overflow-x: hidden;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Foco visible accesible con dorado (visible en fondos oscuros) */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Solo screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   3. CONTENEDOR BASE
+   ---------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.container--wide {
+  max-width: var(--container-max-wide);
+}
+
+
+/* ----------------------------------------------------------------
+   4. DETALLES DORADOS — componentes reutilizables
+   ---------------------------------------------------------------- */
+
+/* Hairline dorada de 56px bajo H2 de sección */
+.section__gold-rule {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: var(--space-5) auto var(--space-6);
+}
+
+/* Alineada a la izquierda (hero, footer) */
+.section__gold-rule--left {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Eyebrow con rombos decorativos */
+.section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-3);
+}
+
+.section__eyebrow::before,
+.section__eyebrow::after {
+  content: '◆';
+  font-size: 0.5em;
+  color: var(--color-gold-hairline);
+  flex-shrink: 0;
+}
+
+/* Separador de sección en línea completa con degradado dorado */
+.section-divider--gold {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-gold-hairline) 20%,
+    var(--color-gold-hairline) 80%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   5. SISTEMA DE BOTONES
+   ---------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 14px 28px;
+  min-height: 48px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+  white-space: nowrap;
+}
+
+/* Botón primario dorado (sobre fondos oscuros) */
+.btn--primary {
+  background-color: var(--color-gold);
+  color: var(--color-wine-dark);
+  border-color: var(--color-gold);
+  font-weight: var(--font-weight-semibold);
+}
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background-color: var(--color-gold-bright);
+  border-color: var(--color-gold-bright);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.btn--primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Botón outline dorado (sobre fondos oscuros) */
+.btn--outline-gold {
+  background-color: transparent;
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+}
+.btn--outline-gold:hover,
+.btn--outline-gold:focus-visible {
+  background-color: var(--color-gold);
+  color: var(--color-wine-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Botón outline claro (sobre fondos oscuros del hero) */
+.btn--outline-light {
+  background-color: transparent;
+  color: var(--color-cream);
+  border-color: var(--color-cream-border);
+  font-weight: var(--font-weight-medium);
+}
+.btn--outline-light:hover,
+.btn--outline-light:focus-visible {
+  background-color: var(--color-cream-ghost);
+  border-color: var(--color-cream-dimmed);
+  transform: translateY(-1px);
+}
+
+/* Botón ghost/texto (terciario) */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-cream-subtle);
+  border-color: transparent;
+  font-weight: var(--font-weight-medium);
+}
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  color: var(--color-cream);
+}
+
+/* Botón vino (para secciones claras) */
+.btn--wine {
+  background-color: var(--color-wine);
+  color: var(--color-cream);
+  border-color: var(--color-wine);
+  font-weight: var(--font-weight-medium);
+}
+.btn--wine:hover,
+.btn--wine:focus-visible {
+  background-color: var(--color-wine-dark);
+  border-color: var(--color-wine-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Botón outline vino (para secciones claras) */
+.btn--outline-wine {
+  background-color: transparent;
+  color: var(--color-wine);
+  border-color: var(--color-wine);
+  font-weight: var(--font-weight-medium);
+}
+.btn--outline-wine:hover,
+.btn--outline-wine:focus-visible {
+  background-color: var(--color-wine);
+  color: var(--color-cream);
+  transform: translateY(-1px);
+}
+
+/* Tamaño grande */
+.btn--lg {
+  padding: 16px 32px;
+  font-size: var(--text-body-lg);
+  min-height: 52px;
+}
+
+.btn__icon {
+  flex-shrink: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   6. HEADER STICKY — vino glass con blur
+   ---------------------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background-color: var(--color-wine-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+/* Al hacer scroll > 40px */
+.header--scrolled {
+  background-color: var(--color-wine-glass-solid);
+  border-bottom-color: var(--color-gold-hairline);
+  box-shadow: var(--shadow-sm);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 60px;
+}
+
+/* Logo */
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.header__logo-name {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-cream);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.header__logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.6em;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-cream-subtle);
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Navegación principal (oculta en móvil) */
+.header__nav {
+  display: none;
+  margin-left: auto;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.header__nav-link {
+  position: relative;
+  color: var(--color-cream-subtle);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.02em;
+  padding-bottom: 4px;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.header__nav-link:hover,
+.header__nav-link.is-active {
+  color: var(--color-cream);
+}
+
+.header__nav-link:hover::after,
+.header__nav-link.is-active::after {
+  opacity: 1;
+}
+
+/* Botón WhatsApp en header — outline dorado */
+.header__whatsapp {
+  display: none;
+  padding: 8px 16px;
+  min-height: 38px;
+  font-size: var(--text-body-sm);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
+  margin-left: var(--space-4);
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-full);
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-base);
+  cursor: pointer;
+}
+
+.header__whatsapp:hover,
+.header__whatsapp:focus-visible {
+  background-color: var(--color-gold);
+  color: var(--color-wine-dark);
+  transform: translateY(-1px);
+}
+
+.header__whatsapp-icon {
+  color: var(--color-whatsapp);
+  flex-shrink: 0;
+}
+
+/* Botón hamburguesa */
+.header__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-base);
+}
+
+.header__toggle:hover {
+  background-color: var(--color-cream-ghost);
+}
+
+.header__toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-cream);
+  border-radius: var(--radius-full);
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
+}
+
+.header__toggle[aria-expanded="true"] .header__toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.header__toggle[aria-expanded="true"] .header__toggle-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.header__toggle[aria-expanded="true"] .header__toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menú móvil desplegable */
+.mobile-menu {
+  background-color: var(--color-wine-dark);
+  border-top: 1px solid var(--color-gold-hairline);
+  overflow: hidden;
+  max-height: 0;
+  transition:
+    max-height 280ms ease,
+    opacity 280ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mobile-menu.is-open {
+  max-height: 420px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu__list {
+  padding: var(--space-4) var(--container-px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-cream-subtle);
+  border-radius: var(--radius-sm);
+  min-height: 48px;
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link:focus-visible {
+  color: var(--color-cream);
+  background-color: var(--color-cream-ghost);
+}
+
+.mobile-menu__link--whatsapp {
+  color: var(--color-whatsapp);
+  font-weight: var(--font-weight-semibold);
+}
+.mobile-menu__link--whatsapp:hover {
+  color: var(--color-whatsapp-hover);
+  background-color: rgba(37, 211, 102, 0.08);
+}
+
+
+/* ----------------------------------------------------------------
+   7. HERO — oscuro vino con overlay
+   ---------------------------------------------------------------- */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(43, 9, 14, 0.30) 0%,
+    rgba(43, 9, 14, 0.88) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: var(--space-16);
+}
+
+.hero__text {
+  max-width: 600px;
+}
+
+/* Eyebrow del hero */
+.hero__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-4);
+}
+
+/* Chip de calificación */
+.hero__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  padding: 6px 14px;
+  background-color: rgba(43, 33, 28, 0.50);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero__rating-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  color: var(--color-gold);
+}
+
+.hero__rating-text {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-cream);
+}
+
+/* Título H1 del hero */
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-hero);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-display);
+  color: var(--color-cream);
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+}
+
+.hero__title em {
+  font-style: italic;
+  font-weight: var(--font-weight-thin);
+}
+
+/* Hairline dorada bajo el H1 */
+.hero__gold-rule {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: var(--space-6) 0;
+}
+
+/* Subtítulo del hero */
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-normal);
+  color: var(--color-cream-subtle);
+  max-width: 480px;
+  margin-bottom: var(--space-8);
+}
+
+/* CTAs en columna en móvil */
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+/* Indicador de scroll */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-cream-subtle);
+  animation: bounce 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+
+/* ----------------------------------------------------------------
+   8. FRANJA DE PRUEBA SOCIAL — fondo taupe con separadores dorados
+   ---------------------------------------------------------------- */
+.section--proof {
+  background-color: var(--color-taupe-light);
+  padding-block: var(--space-8);
+}
+
+/* En tablet y desktop: ligeramente más alto */
+@media (min-width: 768px) {
+  .section--proof {
+    padding-block: var(--space-10);
+  }
+}
+
+.proof-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Separadores dorados laterales */
+.proof-bar::before,
+.proof-bar::after {
+  content: '';
+  flex: 1;
+  min-width: 24px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold-hairline)
+  );
+}
+
+.proof-bar::after {
+  background: linear-gradient(
+    to left,
+    transparent,
+    var(--color-gold-hairline)
+  );
+}
+
+.proof__group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.proof__stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--color-gold);
+}
+
+.proof__score {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark);
+  line-height: 1;
+}
+
+.proof__pipe {
+  color: var(--color-taupe-dark);
+  font-weight: var(--font-weight-thin);
+  margin-inline: var(--space-1);
+}
+
+.proof__reviews {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-on-light-muted);
+}
+
+.proof__link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gold-dim);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition:
+    text-decoration-color var(--transition-base),
+    color var(--transition-base);
+  white-space: nowrap;
+}
+
+.proof__link:hover,
+.proof__link:focus-visible {
+  color: var(--color-gold);
+  text-decoration-color: var(--color-gold);
+}
+
+
+/* ----------------------------------------------------------------
+   9. SECCIONES BASE
+   ---------------------------------------------------------------- */
+.section {
+  padding-block: var(--section-py-mobile);
+}
+
+/* Cabecera de sección */
+.section__header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-3);
+}
+
+.section__eyebrow::before,
+.section__eyebrow::after {
+  content: '◆';
+  font-size: 0.5em;
+  color: var(--color-gold-hairline);
+  flex-shrink: 0;
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  margin-top: var(--space-3);
+}
+
+/* Título en sección oscura */
+.section__title--on-dark {
+  color: var(--color-cream);
+}
+
+/* Título en sección clara */
+.section__title--on-light {
+  color: var(--color-dark);
+}
+
+.section__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  font-weight: var(--font-weight-thin);
+  line-height: var(--leading-normal);
+  margin-top: var(--space-5);
+}
+
+.section__subtitle--on-dark {
+  color: var(--color-text-on-dark-muted);
+}
+
+.section__subtitle--on-light {
+  color: var(--color-text-on-light-muted);
+}
+
+/* Hairline centrada tras H2 de sección */
+.section__gold-rule {
+  display: block;
+  width: 56px;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: var(--space-5) auto var(--space-6);
+}
+
+/* CTA centrado al pie de sección */
+.section__cta {
+  text-align: center;
+  margin-top: var(--space-10);
+}
+
+
+/* ----------------------------------------------------------------
+   10. SECCIÓN MENÚ — fondo taupe-bg cálido
+   ---------------------------------------------------------------- */
+.section--menu {
+  background-color: var(--color-taupe-bg);
+  padding-block: var(--section-py-mobile);
+}
+
+/* Barra de tabs de categoría */
+.menu-tabs {
+  display: flex;
+  overflow-x: auto;
+  gap: 0;
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-gold-border);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.menu-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-tab {
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--color-text-on-light-muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    font-weight var(--transition-base);
+  white-space: nowrap;
+  margin-bottom: -1px;
+}
+
+.menu-tab:hover {
+  color: var(--color-dark);
+  border-bottom-color: var(--color-gold-hairline);
+}
+
+.menu-tab.is-active {
+  color: var(--color-dark);
+  border-bottom-color: var(--color-gold);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Grid de tarjetas de plato */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+/* Mensaje vacío cuando no hay platos en la categoría */
+.menu-empty-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  font-style: italic;
+  color: var(--color-text-on-light-muted);
+  padding: var(--space-10);
+}
+
+/* Tarjeta de plato */
+.card--dish {
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+  will-change: transform;
+}
+
+.card--dish:hover {
+  border-color: var(--color-gold-hairline);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+/* Media (foto) de la tarjeta */
+.card__media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.card--dish:hover .card__img {
+  transform: scale(1.04);
+}
+
+/* Badge de categoría */
+.card__badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  background-color: var(--color-wine);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-xs);
+  pointer-events: none;
+}
+
+/* Body de la tarjeta */
+.card__body {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-2);
+}
+
+.card__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-thin);
+  color: var(--color-text-on-light-muted);
+  line-height: var(--leading-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+/* Separador interno dorado */
+.card__separator {
+  border: none;
+  border-top: 1px solid var(--color-gold-border);
+  margin: var(--space-4) 0 var(--space-3);
+}
+
+/* Precio */
+.card__price-wrapper {
+  margin-top: auto;
+}
+
+.card__price-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--color-gold-dim);
+  margin-bottom: var(--space-1);
+}
+
+.card__price-amount {
+  font-family: var(--font-mono);
+  font-size: var(--text-price);
+  font-weight: 600;
+  color: var(--color-gold-dim);
+  letter-spacing: 0.04em;
+}
+
+.card__price-currency {
+  font-family: var(--font-display);
+  font-size: 1.05em;
+  color: inherit;
+}
+
+
+/* ----------------------------------------------------------------
+   11. SECCIÓN GALERÍA — fondo vino-dark oscuro
+   ---------------------------------------------------------------- */
+.section--gallery {
+  background-color: var(--color-wine-dark);
+  padding-block: var(--section-py-mobile);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-wine-deeper);
+  box-shadow: inset 0 0 0 0 var(--color-gold-hairline);
+  transition: box-shadow var(--transition-slow);
+}
+
+/* Primera celda destacada: 2x2 en desktop */
+.gallery-item--featured {
+  /* En móvil: igual que las demás */
+  aspect-ratio: 1 / 1;
+}
+
+/* Celdas normales */
+.gallery-item:not(.gallery-item--featured) {
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-item__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  outline-offset: -2px;
+}
+
+.gallery-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+/* Overlay con lupa */
+.gallery-item__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-wine-overlay-gallery);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-cream);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+@media (hover: hover) {
+  .gallery-item:hover {
+    box-shadow: inset 0 0 0 1px var(--color-gold-hairline);
+  }
+
+  .gallery-item__link:hover .gallery-item__img {
+    transform: scale(1.03);
+  }
+
+  .gallery-item__link:hover .gallery-item__overlay {
+    opacity: 1;
+  }
+
+  .gallery-item__link:focus-visible .gallery-item__overlay {
+    opacity: 1;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+   12. SECCIÓN UBICACIÓN — fondo crema
+   ---------------------------------------------------------------- */
+.section--location {
+  background-color: var(--color-cream);
+  padding-block: var(--section-py-mobile);
+}
+
+.location-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.location-map {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-gold-border);
+  box-shadow: 0 4px 24px rgba(43, 33, 28, 0.12);
+  aspect-ratio: 16 / 9;
+  min-height: 280px;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.info-block__icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(107, 26, 34, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--color-wine);
+}
+
+.info-block__content {
+  flex: 1;
+}
+
+.info-block__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--color-gold-dim);
+  margin-bottom: var(--space-1);
+}
+
+.info-block__text {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-dark);
+  line-height: var(--leading-snug);
+  font-style: normal;
+}
+
+.info-block__link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  color: var(--color-wine);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-base);
+}
+
+.info-block__link:hover,
+.info-block__link:focus-visible {
+  color: var(--color-wine-dark);
+}
+
+/* Tabla de horario */
+.schedule {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-gold-border);
+}
+
+.schedule__row:last-child {
+  border-bottom: none;
+}
+
+.schedule__day {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-text-on-light-muted);
+}
+
+.schedule__time {
+  font-family: var(--font-mono);
+  font-size: var(--text-body-sm);
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+/* Acciones de contacto en ubicación */
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.location-cta {
+  align-self: flex-start;
+}
+
+
+/* ----------------------------------------------------------------
+   13. FOOTER — vino-deeper con borde superior dorado
+   ---------------------------------------------------------------- */
+.footer {
+  background-color: var(--color-wine-deeper);
+  border-top: 2px solid var(--color-gold-hairline);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-8);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-10);
+  text-align: center;
+  padding-bottom: var(--space-10);
+}
+
+.footer__col--brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Logo en footer */
+.footer__logo-name {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-cream);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.footer__logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.55em;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-cream-subtle);
+  display: block;
+  margin-top: 2px;
+}
+
+/* Tagline en footer */
+.footer__tagline {
+  font-family: var(--font-display);
+  font-size: var(--text-body-md);
+  font-weight: var(--font-weight-thin);
+  font-style: italic;
+  color: var(--color-cream-subtle);
+  margin-top: var(--space-3);
+  max-width: 260px;
+}
+
+/* Hairline dorada en footer — alineada a izquierda en desktop */
+.footer__gold-rule {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-gold-hairline);
+  margin: var(--space-4) auto 0;
+}
+
+/* Iconos sociales del footer */
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-cream-ghost);
+  color: var(--color-cream-subtle);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  background-color: rgba(243, 238, 229, 0.20);
+  color: var(--color-gold);
+}
+
+/* Títulos de columna */
+.footer__col-title {
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-cream-subtle);
+  margin-bottom: var(--space-4);
+}
+
+/* Links del footer */
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.footer__link {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-cream-subtle);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+  color: var(--color-gold-bright);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  background-color: transparent;
+}
+
+/* Bloque de contacto en footer */
+.footer__contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-bottom: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  color: var(--color-cream-subtle);
+}
+
+.footer__contact-link {
+  color: var(--color-cream-subtle);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer__contact-link:hover,
+.footer__contact-link:focus-visible {
+  color: var(--color-gold-bright);
+}
+
+/* Divisor del footer */
+.footer__divider {
+  height: 1px;
+  background-color: rgba(201, 151, 47, 0.15);
+  margin-bottom: var(--space-6);
+}
+
+/* Copyright */
+.footer__copyright {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--text-label);
+  color: var(--color-cream-subtle);
+}
+
+
+/* ----------------------------------------------------------------
+   14. FAB WHATSAPP FLOTANTE
+   ---------------------------------------------------------------- */
+.fab-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 1000;
+
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+
+  background-color: var(--color-whatsapp);
+  color: var(--color-cream);
+  box-shadow: var(--shadow-whatsapp);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-decoration: none;
+
+  animation: fab-enter 300ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.fab-whatsapp:hover,
+.fab-whatsapp:focus-visible {
+  background-color: var(--color-whatsapp-hover);
+  transform: scale(1.06);
+  box-shadow: var(--shadow-whatsapp), 0 8px 32px rgba(37, 211, 102, 0.30);
+}
+
+.fab-whatsapp:active {
+  transform: scale(0.97);
+}
+
+.fab-whatsapp__icon {
+  flex-shrink: 0;
+}
+
+.fab-whatsapp__text {
+  display: none;
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  color: var(--color-cream);
+}
+
+@keyframes fab-enter {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+   15. SCROLL REVEAL
+   ---------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Retrasos escalonados */
+.reveal:nth-child(2) { transition-delay: 60ms; }
+.reveal:nth-child(3) { transition-delay: 120ms; }
+.reveal:nth-child(4) { transition-delay: 180ms; }
+.reveal:nth-child(5) { transition-delay: 240ms; }
+.reveal:nth-child(6) { transition-delay: 300ms; }
+
+
+/* ----------------------------------------------------------------
+   16. MEDIA QUERIES — mobile-first (375 → 480 → 768 → 900 → 1024 → 1280)
+   ---------------------------------------------------------------- */
+
+/* 480px: botones hero en fila, header WhatsApp visible */
+@media (min-width: 480px) {
+  .hero__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .header__whatsapp {
+    display: inline-flex;
+  }
+
+  .header__whatsapp-text {
+    display: none;
+  }
+
+  /* Grid de platos: 2 columnas */
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* 640px: texto en botón WhatsApp del header */
+@media (min-width: 640px) {
+  .header__whatsapp-text {
+    display: inline;
+  }
+}
+
+/* 768px: galería 3 columnas, sección padding mayor */
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--section-py-tablet);
+  }
+
+  .section--menu {
+    padding-block: var(--section-py-tablet);
+  }
+
+  .section--gallery {
+    padding-block: var(--section-py-tablet);
+  }
+
+  .section--location {
+    padding-block: var(--section-py-tablet);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 900px: header desktop completo */
+@media (min-width: 900px) {
+  .header__inner {
+    height: 72px;
+  }
+
+  .header__nav {
+    display: block;
+    margin-left: auto;
+  }
+
+  .header__toggle {
+    display: none;
+  }
+
+  .header__whatsapp {
+    display: inline-flex;
+    margin-left: var(--space-4);
+  }
+
+  .header__whatsapp-text {
+    display: inline;
+  }
+}
+
+/* 1024px: desktop completo */
+@media (min-width: 1024px) {
+  .section {
+    padding-block: var(--section-py-desktop);
+  }
+
+  .section--menu {
+    padding-block: var(--section-py-premium);
+  }
+
+  .section--gallery {
+    padding-block: var(--section-py-premium);
+  }
+
+  .section--location {
+    padding-block: var(--section-py-desktop);
+  }
+
+  /* Hero: contenido a la izquierda, tercio inferior */
+  .hero__content {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: var(--space-20);
+  }
+
+  .hero__text {
+    max-width: 600px;
+  }
+
+  /* Menú: 3 columnas */
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Galería: 4 columnas + celda destacada */
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .gallery-item--featured {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: unset;
+  }
+
+  /* Galería: todas las celdas normales con altura definida */
+  .gallery-grid .gallery-item:not(.gallery-item--featured) {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Ubicación: 60/40 horizontal */
+  .location-grid {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .location-map {
+    flex: 0 0 58%;
+    min-height: 420px;
+    aspect-ratio: unset;
+  }
+
+  .location-info {
+    flex: 1;
+  }
+
+  /* Footer: 3 columnas */
+  .footer__inner {
+    grid-template-columns: 1.4fr 1fr 1.2fr;
+    text-align: left;
+  }
+
+  .footer__col--brand {
+    align-items: flex-start;
+  }
+
+  .footer__links {
+    align-items: flex-start;
+  }
+
+  .footer__social {
+    justify-content: flex-start;
+  }
+
+  .footer__gold-rule {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .footer__contact-item {
+    justify-content: flex-start;
+  }
+
+  /* FAB desktop: pill con texto */
+  .fab-whatsapp {
+    width: auto;
+    height: auto;
+    padding: 14px 20px;
+  }
+
+  .fab-whatsapp__text {
+    display: inline;
+  }
+}
+
+/* 1280px: grid de menú puede llegar a 3 col fijo */
+@media (min-width: 1280px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ----------------------------------------------------------------
+   17. ACCESIBILIDAD — MOVIMIENTO REDUCIDO
+   ---------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__scroll-hint {
+    animation: none;
+  }
+
+  .fab-whatsapp {
+    animation: none;
+  }
+}
+
+
+/* ----------------------------------------------------------------
+   18. UTILIDADES MÍNIMAS
+   ---------------------------------------------------------------- */
+.text-xs     { font-size: var(--text-label); }
+.text-sm     { font-size: var(--text-body-sm); }
+.text-muted  { color: var(--color-text-on-light-muted); }
+.text-center { text-align: center; }

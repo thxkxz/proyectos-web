@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- =====================================================
+    PERSONALIZAR: Cambia el título, descripción y og:image
+    ===================================================== -->
+  <title>Nombre del Negocio — Tu subtítulo aquí</title>
+  <meta name="description" content="Descripción breve del negocio. Máximo 160 caracteres para SEO." />
+
+  <!-- Open Graph (redes sociales) -->
+  <meta property="og:title" content="Nombre del Negocio" />
+  <meta property="og:description" content="Descripción breve del negocio." />
+  <meta property="og:type" content="website" />
+  <!-- REEMPLAZAR: URL de la imagen de portada para redes sociales (1200x630px) -->
+  <meta property="og:image" content="https://placehold.co/1200x630/1A2E4A/FFFFFF?text=OG+Image" />
+
+  <!-- Favicon (REEMPLAZAR con tu ícono) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>" />
+
+  <!-- Preconnect para Google Fonts (performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fuentes: Plus Jakarta Sans (display) + Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+    HEADER STICKY
+    ============================================================ -->
+  <header class="header" id="header" role="banner">
+    <div class="container header__inner">
+
+      <!-- Logo / Nombre del negocio -->
+      <a href="#inicio" class="header__logo" aria-label="Ir al inicio">
+        <!-- REEMPLAZAR: Puedes poner un <img> con tu logo o dejar solo texto -->
+        <span class="header__logo-text">
+          <!-- REEMPLAZAR: Nombre del negocio -->
+          Nombre del Negocio
+        </span>
+      </a>
+
+      <!-- Navegación principal -->
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__nav-list" role="list">
+          <li><a href="#servicios" class="header__nav-link">Servicios</a></li>
+          <li><a href="#galeria" class="header__nav-link">Galería</a></li>
+          <li><a href="#ubicacion" class="header__nav-link">Ubicación</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón WhatsApp en el header -->
+      <a
+        href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
+        class="btn btn--whatsapp header__whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+        id="header-whatsapp-link"
+      >
+        <!-- Ícono WhatsApp SVG inline -->
+        <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="header__whatsapp-text">WhatsApp</span>
+      </a>
+
+      <!-- Botón hamburguesa para móvil -->
+      <button
+        class="header__toggle"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menú"
+      >
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+        <span class="header__toggle-bar"></span>
+      </button>
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menú móvil" aria-hidden="true">
+      <ul class="mobile-menu__list" role="list">
+        <li><a href="#servicios" class="mobile-menu__link">Servicios</a></li>
+        <li><a href="#galeria" class="mobile-menu__link">Galería</a></li>
+        <li><a href="#ubicacion" class="mobile-menu__link">Ubicación</a></li>
+        <li>
+          <a
+            href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
+            class="mobile-menu__link mobile-menu__link--whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="mobile-whatsapp-link"
+          >
+            Contactar por WhatsApp
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+      SECCIÓN 1: HERO
+      ============================================================ -->
+    <section class="hero" id="inicio" aria-label="Portada principal">
+
+      <!-- REEMPLAZAR: Cambia la URL de la imagen hero (recomendado: 1920x1080px o mayor)
+           Para producción: usa una imagen local en assets/ o un CDN propio -->
+      <div
+        class="hero__bg"
+        style="background-image: url('https://picsum.photos/1920/1080?random=10');"
+        role="img"
+        aria-label="Imagen de portada del negocio"
+      ></div>
+
+      <!-- Overlay de gradiente (definido en CSS, no modificar) -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container hero__content">
+        <div class="hero__text">
+
+          <!-- REEMPLAZAR: Frase principal del negocio (máx. 8 palabras recomendado) -->
+          <h1 class="hero__title">
+            El sabor que te hace volver
+          </h1>
+
+          <!-- REEMPLAZAR: Subtítulo o descripción corta -->
+          <p class="hero__subtitle">
+            Ingredientes frescos, recetas de siempre. Visítanos y disfruta de la mejor experiencia gastronómica de la ciudad.
+          </p>
+
+          <div class="hero__actions">
+            <!-- CTA primario: ajusta el href al ancla que corresponda -->
+            <a href="#servicios" class="btn btn--primary btn--lg">
+              Ver servicios
+            </a>
+
+            <!-- CTA secundario: WhatsApp -->
+            <a
+              href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20hacer%20una%20reservaci%C3%B3n"
+              class="btn btn--outline-light btn--lg"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="hero-whatsapp-link"
+            >
+              <!-- Ícono WhatsApp SVG inline -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              Hacer reservación
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indicador de scroll hacia abajo -->
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      SECCIÓN 2: SERVICIOS / MENÚ
+      ============================================================ -->
+    <section class="section section--services" id="servicios" aria-labelledby="servicios-titulo">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <!-- REEMPLAZAR: Título de la sección -->
+          <h2 class="section__title" id="servicios-titulo">Nuestros Servicios</h2>
+          <!-- REEMPLAZAR: Subtítulo descriptivo -->
+          <p class="section__subtitle">
+            Ofrecemos una experiencia completa. Conoce todo lo que tenemos para ti.
+          </p>
+        </div>
+
+        <!-- Grid de tarjetas de servicios -->
+        <!-- REEMPLAZAR: Agrega, quita o edita las tarjetas según tu negocio -->
+        <ul class="services-grid" role="list">
+
+          <!-- Tarjeta 1 -->
+          <li class="card reveal" role="listitem">
+            <div class="card__media">
+              <!-- REEMPLAZAR: Imagen del servicio (100x100px aprox.) -->
+              <img
+                src="https://placehold.co/100x100/E8EDF3/1A2E4A?text=Srv+1"
+                alt="Descripción del servicio 1"
+                class="card__img"
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+            </div>
+            <div class="card__body">
+              <!-- REEMPLAZAR: Nombre del servicio -->
+              <h3 class="card__title">Servicio Principal</h3>
+              <!-- REEMPLAZAR: Descripción breve -->
+              <p class="card__desc">
+                Descripción breve del servicio. Máximo 2 líneas para mantener el diseño uniforme.
+              </p>
+              <!-- REEMPLAZAR: Precio (opcional, eliminar si no aplica) -->
+              <span class="card__price">Desde $150</span>
+            </div>
+          </li>
+
+          <!-- Tarjeta 2 -->
+          <li class="card reveal" role="listitem">
+            <div class="card__media">
+              <img
+                src="https://placehold.co/100x100/FEF3DC/F5A623?text=Srv+2"
+                alt="Descripción del servicio 2"
+                class="card__img"
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Segundo Servicio</h3>
+              <p class="card__desc">
+                Descripción del segundo servicio. Sé específico para generar confianza en el cliente.
+              </p>
+              <span class="card__price">Desde $200</span>
+            </div>
+          </li>
+
+          <!-- Tarjeta 3 -->
+          <li class="card reveal" role="listitem">
+            <div class="card__media">
+              <img
+                src="https://placehold.co/100x100/E8EDF3/1A2E4A?text=Srv+3"
+                alt="Descripción del servicio 3"
+                class="card__img"
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Tercer Servicio</h3>
+              <p class="card__desc">
+                Descripción del tercer servicio. Puedes incluir materiales, duración o lo que sea relevante.
+              </p>
+              <span class="card__price">Desde $180</span>
+            </div>
+          </li>
+
+          <!-- Tarjeta 4 -->
+          <li class="card reveal" role="listitem">
+            <div class="card__media">
+              <img
+                src="https://placehold.co/100x100/FEF3DC/F5A623?text=Srv+4"
+                alt="Descripción del servicio 4"
+                class="card__img"
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Cuarto Servicio</h3>
+              <p class="card__desc">
+                Descripción del cuarto servicio. Agrega tantas tarjetas como necesites.
+              </p>
+              <span class="card__price">Desde $120</span>
+            </div>
+          </li>
+
+          <!-- Tarjeta 5 -->
+          <li class="card reveal" role="listitem">
+            <div class="card__media">
+              <img
+                src="https://placehold.co/100x100/E8EDF3/1A2E4A?text=Srv+5"
+                alt="Descripción del servicio 5"
+                class="card__img"
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Quinto Servicio</h3>
+              <p class="card__desc">
+                Descripción del quinto servicio. Mantén el tono consistente en todas las tarjetas.
+              </p>
+              <span class="card__price">Desde $250</span>
+            </div>
+          </li>
+
+          <!-- Tarjeta 6 -->
+          <li class="card reveal" role="listitem">
+            <div class="card__media">
+              <img
+                src="https://placehold.co/100x100/FEF3DC/F5A623?text=Srv+6"
+                alt="Descripción del servicio 6"
+                class="card__img"
+                width="100"
+                height="100"
+                loading="lazy"
+              />
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Sexto Servicio</h3>
+              <p class="card__desc">
+                Descripción del sexto servicio. 6 tarjetas forman un grid de 3 columnas perfecto.
+              </p>
+              <span class="card__price">Desde $300</span>
+            </div>
+          </li>
+
+        </ul>
+        <!-- /services-grid -->
+
+        <!-- Botón CTA de contacto -->
+        <div class="section__cta reveal">
+          <a
+            href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20un%20servicio"
+            class="btn btn--secondary btn--lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="servicios-whatsapp-link"
+          >
+            Cotizar por WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      SECCIÓN 3: GALERÍA
+      ============================================================ -->
+    <section class="section section--gallery section--bg-surface" id="galeria" aria-labelledby="galeria-titulo">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <!-- REEMPLAZAR: Título de la galería -->
+          <h2 class="section__title" id="galeria-titulo">Nuestra Galería</h2>
+          <p class="section__subtitle">
+            Imágenes que reflejan nuestra calidad y dedicación.
+          </p>
+        </div>
+
+        <!-- Grid de galería: 2 col móvil / 3 col 768px / 4 col 1024px -->
+        <!-- REEMPLAZAR: Sustituye cada src con tus fotos reales.
+             Guarda las imágenes en assets/ y usa rutas relativas como assets/foto-1.jpg -->
+        <ul class="gallery-grid reveal" role="list" aria-label="Galería de fotos">
+
+          <li class="gallery-item" role="listitem">
+            <a href="https://picsum.photos/800/800?random=1" class="gallery-item__link" aria-label="Ver foto 1 en tamaño completo" target="_blank" rel="noopener">
+              <img
+                src="https://picsum.photos/400/400?random=1"
+                alt="Descripción de la foto 1 — REEMPLAZAR"
+                class="gallery-item__img"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="gallery-item" role="listitem">
+            <a href="https://picsum.photos/800/800?random=2" class="gallery-item__link" aria-label="Ver foto 2 en tamaño completo" target="_blank" rel="noopener">
+              <img
+                src="https://picsum.photos/400/400?random=2"
+                alt="Descripción de la foto 2 — REEMPLAZAR"
+                class="gallery-item__img"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="gallery-item" role="listitem">
+            <a href="https://picsum.photos/800/800?random=3" class="gallery-item__link" aria-label="Ver foto 3 en tamaño completo" target="_blank" rel="noopener">
+              <img
+                src="https://picsum.photos/400/400?random=3"
+                alt="Descripción de la foto 3 — REEMPLAZAR"
+                class="gallery-item__img"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="gallery-item" role="listitem">
+            <a href="https://picsum.photos/800/800?random=4" class="gallery-item__link" aria-label="Ver foto 4 en tamaño completo" target="_blank" rel="noopener">
+              <img
+                src="https://picsum.photos/400/400?random=4"
+                alt="Descripción de la foto 4 — REEMPLAZAR"
+                class="gallery-item__img"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="gallery-item" role="listitem">
+            <a href="https://picsum.photos/800/800?random=5" class="gallery-item__link" aria-label="Ver foto 5 en tamaño completo" target="_blank" rel="noopener">
+              <img
+                src="https://picsum.photos/400/400?random=5"
+                alt="Descripción de la foto 5 — REEMPLAZAR"
+                class="gallery-item__img"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="gallery-item" role="listitem">
+            <a href="https://picsum.photos/800/800?random=6" class="gallery-item__link" aria-label="Ver foto 6 en tamaño completo" target="_blank" rel="noopener">
+              <img
+                src="https://picsum.photos/400/400?random=6"
+                alt="Descripción de la foto 6 — REEMPLAZAR"
+                class="gallery-item__img"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="gallery-item" role="listitem">
+            <a href="https://picsum.photos/800/800?random=7" class="gallery-item__link" aria-label="Ver foto 7 en tamaño completo" target="_blank" rel="noopener">
+              <img
+                src="https://picsum.photos/400/400?random=7"
+                alt="Descripción de la foto 7 — REEMPLAZAR"
+                class="gallery-item__img"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="gallery-item" role="listitem">
+            <a href="https://picsum.photos/800/800?random=8" class="gallery-item__link" aria-label="Ver foto 8 en tamaño completo" target="_blank" rel="noopener">
+              <img
+                src="https://picsum.photos/400/400?random=8"
+                alt="Descripción de la foto 8 — REEMPLAZAR"
+                class="gallery-item__img"
+                width="400"
+                height="400"
+                loading="lazy"
+              />
+              <div class="gallery-item__overlay" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </div>
+            </a>
+          </li>
+
+        </ul>
+        <!-- /gallery-grid -->
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+      SECCIÓN 4: UBICACIÓN Y HORARIO
+      ============================================================ -->
+    <section class="section section--location" id="ubicacion" aria-labelledby="ubicacion-titulo">
+      <div class="container">
+
+        <div class="section__header reveal">
+          <h2 class="section__title" id="ubicacion-titulo">¿Dónde estamos?</h2>
+          <p class="section__subtitle">
+            Ven a visitarnos o escríbenos si tienes alguna duda.
+          </p>
+        </div>
+
+        <div class="location-grid">
+
+          <!-- Mapa de Google Maps (primero en móvil) -->
+          <div class="location-map reveal">
+            <!-- REEMPLAZAR: Genera tu embed de Google Maps en:
+                 maps.google.com > tu ubicación > Compartir > Insertar mapa
+                 Copia el src del iframe y pégalo aquí abajo -->
+            <iframe
+              class="map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.661287990268!2d-99.16869372394955!3d19.427023581886927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sZ%C3%B3calo%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+              width="100%"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación del negocio en Google Maps"
+              aria-label="Mapa de ubicación del negocio"
+            ></iframe>
+          </div>
+          <!-- /location-map -->
+
+          <!-- Información de contacto y horario -->
+          <div class="location-info reveal">
+
+            <!-- Dirección -->
+            <div class="info-block">
+              <div class="info-block__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="info-block__content">
+                <h3 class="info-block__label">Dirección</h3>
+                <!-- REEMPLAZAR: Dirección completa del negocio -->
+                <address class="info-block__text">
+                  Calle Ejemplo #123, Colonia Centro,<br>
+                  Ciudad, Estado, CP 00000
+                </address>
+              </div>
+            </div>
+
+            <!-- Horario -->
+            <div class="info-block">
+              <div class="info-block__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="info-block__content">
+                <h3 class="info-block__label">Horario</h3>
+                <!-- REEMPLAZAR: Horario de atención -->
+                <dl class="schedule">
+                  <div class="schedule__row">
+                    <dt class="schedule__day">Lun — Vie</dt>
+                    <dd class="schedule__time">09:00 — 20:00</dd>
+                  </div>
+                  <div class="schedule__row">
+                    <dt class="schedule__day">Sábado</dt>
+                    <dd class="schedule__time">10:00 — 18:00</dd>
+                  </div>
+                  <div class="schedule__row">
+                    <dt class="schedule__day">Domingo</dt>
+                    <dd class="schedule__time">Cerrado</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="info-block">
+              <div class="info-block__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/>
+                </svg>
+              </div>
+              <div class="info-block__content">
+                <h3 class="info-block__label">Teléfono</h3>
+                <!-- REEMPLAZAR: Número de teléfono con formato tel: -->
+                <a href="tel:+521XXXXXXXXXX" class="info-block__link" id="tel-link">
+                  +52 1 XX XXXX XXXX
+                </a>
+              </div>
+            </div>
+
+            <!-- Botón "Cómo llegar" -->
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=19.427023,-99.168693"
+              class="btn btn--primary location-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir Google Maps para obtener indicaciones"
+              id="maps-directions-link"
+            >
+              <!-- REEMPLAZAR: El href debe ser la URL de Google Maps con las coordenadas reales -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+              </svg>
+              Cómo llegar
+            </a>
+
+          </div>
+          <!-- /location-info -->
+
+        </div>
+        <!-- /location-grid -->
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+
+      <!-- Columna 1: Nombre y descripción -->
+      <div class="footer__col footer__col--brand">
+        <!-- REEMPLAZAR: Nombre del negocio -->
+        <p class="footer__brand-name">Nombre del Negocio</p>
+        <!-- REEMPLAZAR: Eslogan o descripción corta -->
+        <p class="footer__brand-desc">
+          Tu descripción breve aquí. Una o dos líneas máximo.
+        </p>
+      </div>
+
+      <!-- Columna 2: Links rápidos -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Navegación</h4>
+        <ul class="footer__links" role="list">
+          <li><a href="#inicio" class="footer__link">Inicio</a></li>
+          <li><a href="#servicios" class="footer__link">Servicios</a></li>
+          <li><a href="#galeria" class="footer__link">Galería</a></li>
+          <li><a href="#ubicacion" class="footer__link">Ubicación</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Redes sociales -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Síguenos</h4>
+        <div class="footer__social">
+
+          <!-- Facebook — REEMPLAZAR: href con tu página de Facebook -->
+          <a
+            href="https://facebook.com/tunegocio"
+            class="footer__social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar Facebook"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram — REEMPLAZAR: href con tu perfil de Instagram -->
+          <a
+            href="https://instagram.com/tunegocio"
+            class="footer__social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar Instagram"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp — REEMPLAZAR: número en wa.me -->
+          <a
+            href="https://wa.me/521XXXXXXXXXX"
+            class="footer__social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contactar por WhatsApp"
+            id="footer-whatsapp-link"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </a>
+
+          <!-- TikTok — REEMPLAZAR: href con tu perfil de TikTok -->
+          <a
+            href="https://tiktok.com/@tunegocio"
+            class="footer__social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visitar TikTok"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.16 8.16 0 004.77 1.52V6.77a4.85 4.85 0 01-1-.08z"/>
+            </svg>
+          </a>
+
+        </div>
+        <!-- /footer__social -->
+      </div>
+
+    </div>
+
+    <!-- Línea divisora -->
+    <div class="footer__divider" aria-hidden="true"></div>
+
+    <!-- Copyright -->
+    <div class="container">
+      <p class="footer__copyright">
+        <!-- REEMPLAZAR: Año y nombre del negocio -->
+        &copy; <span id="footer-year">2025</span> Nombre del Negocio. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+    FAB: BOTÓN FLOTANTE DE WHATSAPP
+    ============================================================ -->
+  <a
+    href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n"
+    class="fab-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+    id="fab-whatsapp-link"
+  >
+    <svg class="fab-whatsapp__icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="fab-whatsapp__text">WhatsApp</span>
+  </a>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
