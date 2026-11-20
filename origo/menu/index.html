@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Menú Origo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Germania+One&display=swap">
+<style>
+  :root {
+    --negro: #090909;
+    --crema: #FFE6CC;
+    --mostaza: #FFB703;
+    --brasa: #FF5A1F;
+    --carbon: #2A0F0A;
+
+    --f-titular: 'New Rocker', Georgia, serif;
+    --f-texto: 'Germania One', Georgia, serif;
+
+    --lienzo-ancho: 1080px;
+    --lienzo-alto: 1350px;
+    --margen-x: 80px;
+
+    /* Aire entre platos: el original usaba 24px / 20px con 3 platos.
+       Con 4 platos se reparte proporcionalmente para que quepan sin apretarse. */
+    --plato-pad-top: 18px;
+    --plato-pad-bottom: 15px;
+    --plato-sub-mt: 10px;
+    --plato-desc-mt: 8px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--negro); }
+
+  .lienzo {
+    width: var(--lienzo-ancho);
+    height: var(--lienzo-alto);
+    background: var(--negro);
+    position: relative;
+    overflow: hidden;
+    padding: 30px var(--margen-x) 0;
+  }
+
+  .marca {
+    position: relative;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+  }
+  .marca__barril {
+    position: absolute;
+    left: 341px;
+    top: 0;
+    width: 237px;
+    height: 300px;
+    opacity: 0.13;
+  }
+  .marca__logo {
+    position: relative;
+    display: block;
+    width: 406px;
+    height: 300px;
+  }
+  .marca__logo .humo { fill: none; stroke: var(--crema); stroke-width: 12px; stroke-linecap: round; }
+  .marca__logo .nombre { font-family: var(--f-titular); font-size: 255px; letter-spacing: 4px; fill: var(--crema); text-anchor: middle; }
+  .marca__logo .linea { fill: none; stroke: var(--brasa); stroke-width: 5px; }
+  .marca__logo .lema { font-family: var(--f-texto); font-size: 62px; letter-spacing: 15px; fill: var(--mostaza); text-anchor: middle; }
+
+  .menu__titulo {
+    font-family: var(--f-texto);
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: var(--mostaza);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0 16px;
+  }
+
+  .platos { list-style: none; margin: 0; padding: 0; }
+
+  .plato {
+    border-top: 3px solid var(--carbon);
+    padding: var(--plato-pad-top) 0 var(--plato-pad-bottom);
+  }
+  .plato__cabecera {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .plato__nombre {
+    margin: 0;
+    font-family: var(--f-titular);
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 1;
+    color: var(--crema);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .plato__precio {
+    font-family: var(--f-titular);
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 1;
+    color: var(--mostaza);
+    white-space: nowrap;
+  }
+  .plato__tipo {
+    margin: var(--plato-sub-mt) 0 0;
+    font-family: var(--f-texto);
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: 6px;
+    color: var(--brasa);
+    text-transform: uppercase;
+  }
+  .plato__desc {
+    margin: var(--plato-desc-mt) 0 0;
+    max-width: 920px;
+    font-family: var(--f-texto);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.3;
+    color: var(--crema);
+    opacity: 0.85;
+  }
+
+  .pie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--carbon);
+    border-top: 5px solid var(--brasa);
+    padding: 22px var(--margen-x) 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pie__bloque--der { text-align: right; }
+  .pie__etiqueta {
+    font-family: var(--f-texto);
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--mostaza);
+    text-transform: uppercase;
+  }
+  .pie__dato {
+    font-family: var(--f-titular);
+    font-size: 42px;
+    color: var(--crema);
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<main class="lienzo">
+  <header class="marca">
+    <img class="marca__barril" src="../assets/barril.png" alt="">
+    <svg class="marca__logo" role="img" aria-label="Origo, ahumaditos barril" viewBox="60 180 880 650">
+      <defs>
+        <filter id="rugoso" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+      <g filter="url(#rugoso)">
+        <path class="humo" d="M461 436C427 411 495 386 461 361C427 336 495 311 461 286"/>
+        <path class="humo" d="M507 436C473 396.8 541 357.7 507 318.5C473 279.3 541 240.2 507 201"/>
+        <path class="humo" d="M553 436C519 411 587 386 553 361C519 336 587 311 553 286"/>
+        <text class="nombre" x="500" y="640">ORIGO</text>
+        <path class="linea" d="M130 700H870"/>
+        <text class="lema" x="500" y="790">AHUMADITOS - BARRIL</text>
+      </g>
+    </svg>
+  </header>
+
+  <section aria-labelledby="menu-titulo">
+    <h1 class="menu__titulo" id="menu-titulo">Menú · todo sale del barril</h1>
+
+    <ul class="platos">
+      <li class="plato">
+        <div class="plato__cabecera">
+          <h2 class="plato__nombre">Ahumadito</h2>
+          <span class="plato__precio">$16.000</span>
+        </div>
+        <p class="plato__tipo">Chorizo ahumado</p>
+        <p class="plato__desc">Dos chorizos artesanales al barril, papas fritas y salsa tártara de la casa.</p>
+      </li>
+
+      <li class="plato">
+        <div class="plato__cabecera">
+          <h2 class="plato__nombre">El Tizón</h2>
+          <span class="plato__precio">$16.000</span>
+        </div>
+        <p class="plato__tipo">Choriperro</p>
+        <p class="plato__desc">Chorizo artesanal tolimense, mermelada de tocineta, mozzarella derretida, papa ripio y salsas de la casa.</p>
+      </li>
+
+      <li class="plato">
+        <div class="plato__cabecera">
+          <h2 class="plato__nombre">La Brasa</h2>
+          <span class="plato__precio">$22.000</span>
+        </div>
+        <p class="plato__tipo">Hamburguesa con papas</p>
+        <p class="plato__desc">Carne artesanal, pan brioche dorado, mozzarella, mermelada de tocineta, lechuga, papa ripio y salsas de la casa. Con papas fritas.</p>
+      </li>
+
+      <li class="plato">
+        <div class="plato__cabecera">
+          <h2 class="plato__nombre">La Hoguera</h2>
+          <span class="plato__precio">$29.000</span>
+        </div>
+        <p class="plato__tipo">Hamburguesa doble con papas</p>
+        <p class="plato__desc">Si La Brasa te vuelve loco, esta es el doble. Con papas fritas.</p>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="pie">
+    <div class="pie__bloque">
+      <div class="pie__etiqueta">Viernes · Sábado · Domingo</div>
+      <div class="pie__dato">7 a 11 p.m.</div>
+    </div>
+    <div class="pie__bloque pie__bloque--der">
+      <div class="pie__etiqueta">Pedidos y domicilios · WhatsApp</div>
+      <div class="pie__dato">301 325 8434</div>
+    </div>
+  </footer>
+</main>
+</body>
+</html>
