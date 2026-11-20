@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>La Brasa · Origo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Germania+One&display=swap">
+<style>
+  :root {
+    --negro: #090909;
+    --crema: #FFE6CC;
+    --mostaza: #FFB703;
+    --brasa: #FF5A1F;
+    --carbon: #2A0F0A;
+
+    --f-titular: 'New Rocker', Georgia, serif;
+    --f-texto: 'Germania One', Georgia, serif;
+
+    --lienzo-ancho: 1080px;
+    --lienzo-alto: 1350px;
+    --margen-x: 80px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--negro); }
+
+  .lienzo {
+    width: var(--lienzo-ancho);
+    height: var(--lienzo-alto);
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 520px 430px at 50% 47%, rgb(255 90 31 / 0.30), rgb(255 90 31 / 0) 70%),
+      radial-gradient(ellipse 760px 640px at 50% 52%, rgb(42 15 10 / 0.95), rgb(42 15 10 / 0) 75%),
+      var(--negro);
+  }
+
+  /* Grano sutil para que el fondo no se vea plano/digital. */
+  .lienzo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.9 0 0 0 0 0.8 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23g)'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  .marca {
+    position: absolute;
+    top: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 190px;
+    display: block;
+  }
+  .marca .humo { fill: none; stroke: var(--crema); stroke-width: 12px; stroke-linecap: round; }
+  .marca .nombre { font-family: var(--f-titular); font-size: 255px; letter-spacing: 4px; fill: var(--crema); text-anchor: middle; }
+  .marca .linea { fill: none; stroke: var(--brasa); stroke-width: 5px; }
+  .marca .lema { font-family: var(--f-texto); font-size: 62px; letter-spacing: 15px; fill: var(--mostaza); text-anchor: middle; }
+
+  .plato {
+    position: absolute;
+    left: 50%;
+    top: 205px;
+    height: 830px;
+    /* El pan queda centrado; la papa larga de la derecha descentra la caja de la imagen. */
+    transform: translateX(calc(-50% + 42px));
+    filter:
+      drop-shadow(0 0 60px rgb(255 90 31 / 0.22))
+      drop-shadow(0 28px 30px rgb(0 0 0 / 0.65));
+  }
+
+  .ficha {
+    position: absolute;
+    left: var(--margen-x);
+    right: var(--margen-x);
+    bottom: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .ficha__nombre {
+    margin: 0;
+    font-family: var(--f-titular);
+    font-weight: 400;
+    font-size: 92px;
+    line-height: 1;
+    color: var(--crema);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .ficha__tipo {
+    margin: 14px 0 0;
+    font-family: var(--f-texto);
+    font-size: 28px;
+    letter-spacing: 7px;
+    color: var(--brasa);
+    text-transform: uppercase;
+  }
+  .ficha__precio {
+    font-family: var(--f-titular);
+    font-size: 76px;
+    line-height: 1;
+    color: var(--mostaza);
+    white-space: nowrap;
+  }
+
+  .pie {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--carbon);
+    border-top: 5px solid var(--brasa);
+    padding: 22px var(--margen-x) 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pie__bloque--der { text-align: right; }
+  .pie__etiqueta {
+    font-family: var(--f-texto);
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--mostaza);
+    text-transform: uppercase;
+  }
+  .pie__dato {
+    font-family: var(--f-titular);
+    font-size: 42px;
+    color: var(--crema);
+    margin-top: 4px;
+  }
+
+  /* Variante sin texto: solo la foto sobre el fondo de marca (?variante=limpia). */
+  .lienzo--limpia .marca,
+  .lienzo--limpia .ficha,
+  .lienzo--limpia .pie { display: none; }
+  .lienzo--limpia .plato { top: 160px; height: 1030px; transform: translateX(calc(-50% + 52px)); }
+</style>
+</head>
+<body>
+<main class="lienzo">
+  <svg class="marca" role="img" aria-label="Origo, ahumaditos barril" viewBox="60 180 880 650">
+    <defs>
+      <filter id="rugoso" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+    <g filter="url(#rugoso)">
+      <path class="humo" d="M461 436C427 411 495 386 461 361C427 336 495 311 461 286"/>
+      <path class="humo" d="M507 436C473 396.8 541 357.7 507 318.5C473 279.3 541 240.2 507 201"/>
+      <path class="humo" d="M553 436C519 411 587 386 553 361C519 336 587 311 553 286"/>
+      <text class="nombre" x="500" y="640">ORIGO</text>
+      <path class="linea" d="M130 700H870"/>
+      <text class="lema" x="500" y="790">AHUMADITOS - BARRIL</text>
+    </g>
+  </svg>
+
+  <img class="plato" src="../assets/la-brasa-recorte.webp" alt="Hamburguesa La Brasa con papas fritas">
+
+  <section class="ficha">
+    <div>
+      <h1 class="ficha__nombre">La Brasa</h1>
+      <p class="ficha__tipo">Hamburguesa con papas</p>
+    </div>
+    <span class="ficha__precio">$22.000</span>
+  </section>
+
+  <footer class="pie">
+    <div class="pie__bloque">
+      <div class="pie__etiqueta">Viernes · Sábado · Domingo</div>
+      <div class="pie__dato">7 a 11 p.m.</div>
+    </div>
+    <div class="pie__bloque pie__bloque--der">
+      <div class="pie__etiqueta">Pedidos y domicilios · WhatsApp</div>
+      <div class="pie__dato">301 325 8434</div>
+    </div>
+  </footer>
+</main>
+<script>
+  if (new URLSearchParams(location.search).get('variante') === 'limpia') {
+    document.querySelector('.lienzo').classList.add('lienzo--limpia');
+  }
+</script>
+</body>
+</html>
