@@ -14,6 +14,7 @@ origo/
     la-brasa.html     Foto de La Brasa con fondo de marca (?variante=limpia sin texto)
     exportar.js       Genera los PNG de la foto
     export/           Variante post y limpia, en 1x y 2x
+    proceso/          Scripts de edición: borrado con IA, recorte, color y bordes
   assets/
     barril.png              Ilustración del barril (fondo del logo)
     la-brasa-recorte.webp   Hamburguesa recortada, sin fondo

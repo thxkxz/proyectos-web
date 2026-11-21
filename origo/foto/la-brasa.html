@@ -32,8 +32,8 @@
     position: relative;
     overflow: hidden;
     background:
-      radial-gradient(ellipse 520px 430px at 50% 47%, rgb(255 90 31 / 0.30), rgb(255 90 31 / 0) 70%),
-      radial-gradient(ellipse 760px 640px at 50% 52%, rgb(42 15 10 / 0.95), rgb(42 15 10 / 0) 75%),
+      radial-gradient(ellipse 500px 420px at 50% 46%, rgb(255 90 31 / 0.30), rgb(255 90 31 / 0) 70%),
+      radial-gradient(ellipse 760px 640px at 50% 48%, rgb(42 15 10 / 0.95), rgb(42 15 10 / 0) 75%),
       var(--negro);
   }
 
@@ -64,12 +64,13 @@
   .plato {
     position: absolute;
     left: 50%;
-    top: 205px;
-    height: 830px;
-    /* El pan queda centrado; la papa larga de la derecha descentra la caja de la imagen. */
-    transform: translateX(calc(-50% + 42px));
+    top: 225px;
+    height: 790px;
+    /* Las papas se abren más a la derecha: se corre la imagen para que el eje del pan
+       quede en el centro del lienzo (desfase medido: 9.85% del ancho de la imagen). */
+    transform: translateX(calc(-50% + 9.85%));
     filter:
-      drop-shadow(0 0 60px rgb(255 90 31 / 0.22))
+      drop-shadow(0 0 70px rgb(255 90 31 / 0.12))
       drop-shadow(0 28px 30px rgb(0 0 0 / 0.65));
   }
 
@@ -77,11 +78,8 @@
     position: absolute;
     left: var(--margen-x);
     right: var(--margen-x);
-    bottom: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    bottom: 156px;
+    text-align: center;
   }
   .ficha__nombre {
     margin: 0;
@@ -101,14 +99,6 @@
     color: var(--brasa);
     text-transform: uppercase;
   }
-  .ficha__precio {
-    font-family: var(--f-titular);
-    font-size: 76px;
-    line-height: 1;
-    color: var(--mostaza);
-    white-space: nowrap;
-  }
-
   .pie {
     position: absolute;
     left: 0;
@@ -140,7 +130,7 @@
   .lienzo--limpia .marca,
   .lienzo--limpia .ficha,
   .lienzo--limpia .pie { display: none; }
-  .lienzo--limpia .plato { top: 160px; height: 1030px; transform: translateX(calc(-50% + 52px)); }
+  .lienzo--limpia .plato { top: 250px; height: 830px; }
 </style>
 </head>
 <body>
@@ -165,11 +155,8 @@
   <img class="plato" src="../assets/la-brasa-recorte.webp" alt="Hamburguesa La Brasa con papas fritas">
 
   <section class="ficha">
-    <div>
-      <h1 class="ficha__nombre">La Brasa</h1>
-      <p class="ficha__tipo">Hamburguesa con papas</p>
-    </div>
-    <span class="ficha__precio">$22.000</span>
+    <h1 class="ficha__nombre">La Brasa</h1>
+    <p class="ficha__tipo">Hamburguesa con papas</p>
   </section>
 
   <footer class="pie">
