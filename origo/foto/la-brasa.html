@@ -66,9 +66,9 @@
     left: 50%;
     top: 225px;
     height: 790px;
-    /* Las papas se abren más a la derecha: se corre la imagen para que el eje del pan
-       quede en el centro del lienzo (desfase medido: 9.85% del ancho de la imagen). */
-    transform: translateX(calc(-50% + 9.85%));
+    /* Se corre la imagen para que el eje del pan quede en el centro del lienzo
+       (desfase medido por montar_papas.py: 1.42% del ancho de la imagen). */
+    transform: translateX(calc(-50% - 1.42%));
     filter:
       drop-shadow(0 0 70px rgb(255 90 31 / 0.12))
       drop-shadow(0 28px 30px rgb(0 0 0 / 0.65));
