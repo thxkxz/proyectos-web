@@ -12,6 +12,7 @@ Corren en un entorno virtual con `rembg[cpu]`, `torch` y `Pillow`.
 | 4    | `color.py`       | Gradación apetitosa: quita el tinte verde de la luz, pan tostado, carne y papas con más vida |
 | 5    | `bordes.py`      | Silueta pareja, borde suave homogéneo, quita el filo de color del mantel y mide el eje del pan |
 | 4b   | `color_v2.py`    | Variante de color para fotos con luz cálida: dora el pan de abajo y da vida a la carne      |
+| 7    | `integrar.py`    | Contorno con desenfoque natural y light wrap cálido para que la comida se funda con el fondo |
 | 6    | `montar_papas.py`| Asienta una hamburguesa sin papas sobre la pila de papas de La Brasa, con sombra de contacto |
 
 Ejemplo para la primera foto de La Brasa (con papas):
@@ -34,6 +35,7 @@ python recortar.py la-brasa-3.jpg cut.png birefnet-general
 python color_v2.py cut-x.png color.png
 python bordes.py color.png bordes.png
 python montar_papas.py bordes.png final-primera-foto.png montaje.png
+python integrar.py montaje.png integrado.png
 ```
 
 El resultado se guarda como `assets/<plato>-recorte.webp`. `bordes.py` imprime el desfase del eje del pan,
